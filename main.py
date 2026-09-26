@@ -8,6 +8,7 @@ Voice Family — сервис нарезки записей занятий.
 import base64
 import json
 import logging
+import math
 import os
 import re
 import shutil
@@ -36,18 +37,22 @@ def check_key(provided: str | None) -> None:
 
 
 def to_seconds(value) -> int | None:
-    """Принимает 125, '125', '02:05' или '1:02:05'. Не распознал — None."""
+    """Принимает 125, '125', '02:05', '1:02:05' ('02:05.5' — дробные секунды). Не распознал — None."""
     if isinstance(value, bool):
         return None
     if isinstance(value, (int, float)):
-        return max(0, int(value))
+        return max(0, int(value)) if math.isfinite(value) else None
     s = str(value).strip()
     if s.isdigit():
         return int(s)
     parts = s.split(":")
+    if len(parts) < 2:
+        # строка без двоеточия — только целые секунды: '2.35' неоднозначно (2 с или 2:35?)
+        return None
     try:
-        parts = [int(p) for p in parts]
-    except ValueError:
+        # дробные секунды допустимы в последней части: '02:05.5'
+        parts = [int(p) for p in parts[:-1]] + [int(float(parts[-1]))]
+    except (ValueError, OverflowError):
         return None
     if any(p < 0 for p in parts) or any(p > 59 for p in parts[1:]):
         return None
