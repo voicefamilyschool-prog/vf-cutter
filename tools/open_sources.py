@@ -12,7 +12,9 @@ Usage:
       Google search autocomplete; expand=1 adds a-z suffixes (demand / wording signals).
   python3 tools/open_sources.py ytsearch "<query>" [limit=10]
       YouTube search: video id, title, channel, views.
-  (App Store review feeds are empty and YouTube watch pages hit a captcha from this network.)
+  python3 tools/open_sources.py asreviews <app_id> [country=us]
+      App Store reviews shown on the web page (~20 most helpful per country; try us, gb, au, ca, ie, nz).
+  (App Store RSS review feeds are empty and YouTube watch pages hit a captcha from this network.)
   python3 tools/open_sources.py wayback <url> <year>
       Closest Wayback Machine snapshot URL for a page in a given year.
 """
@@ -29,7 +31,7 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, li
 
 def get(url, data=None, headers=None):
     time.sleep(1)
-    cmd = ["curl", "-sS", "-m", "30", "-A", UA, "-H", "Accept-Language: en-US,en;q=0.9"]
+    cmd = ["curl", "-sSL", "-m", "30", "-A", UA, "-H", "Accept-Language: en-US,en;q=0.9"]
     for k, v in (headers or {}).items():
         cmd += ["-H", f"{k}: {v}"]
     if data is not None:
@@ -66,6 +68,19 @@ def reviews(app_id, country="us", pages="3", maxstars="5"):
                 continue
             print(f"[{stars}★ {e.get('updated', {}).get('label', '')[:10]}] {e['title']['label']}: "
                   f"{e['content']['label'][:800]}\n  https://apps.apple.com/{country}/app/id{app_id}\n")
+
+
+def asreviews(app_id, country="us"):
+    import html as h
+    page = get(f"https://apps.apple.com/{country}/app/id{app_id}?see-all=reviews")
+    n = 0
+    for m in re.finditer(r'id="review-(\d+)-title"[^>]*>(.*?)</h3>.*?aria-label="(\d) Stars?".*?<p[^>]*>(.*?)</p>', page, re.S):
+        title = h.unescape(re.sub("<[^>]+>", "", m.group(2))).strip()
+        body = re.sub(r"\s+", " ", h.unescape(re.sub("<[^>]+>", " ", m.group(4)))).strip()
+        print(f"[{m.group(3)}★ {country}] {title}: {body[:900]}\n  https://apps.apple.com/{country}/app/id{app_id}\n")
+        n += 1
+    if not n:
+        print("no reviews found on page")
 
 
 def gplay(term):
@@ -194,6 +209,8 @@ def main():
         apps(arg, **rest)
     elif cmd == "reviews":
         reviews(arg, **rest)
+    elif cmd == "asreviews":
+        asreviews(arg, **rest)
     elif cmd == "gplay":
         gplay(arg)
     elif cmd == "playreviews":
