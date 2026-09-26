@@ -7,9 +7,10 @@ Covers: consent to record (VF-064, VF-063), data retention & deletion (VF-064), 
 
 ## Для владельца (коротко, по-русски)
 
+- Синхронизировано с планом v1.1 (2026-09-26).
 - **Это черновики, а не юридические документы.** Ни один текст отсюда нельзя публиковать и давать на подпись, пока его не посмотрел юрист (US + UK). Каждый спорный момент помечен `[CHECK: legal]`, решения владельца — `[OWNER]`.
 - **Ворота «Стоп» из плана §5.1 остаются:** нет подписанного согласия (раздел 1) — нет записи. LLM-шаг в n8n включён без DPA — нет записи. Пилот только 18+.
-- **Все сроки и цены в фигурных скобках `{…}` — допущения [Д]** из плана (§4.3, VF-064): сырые записи {90 days}, пары Before/Now и якоря — пока студент учится + {12 months}, возврат — {7} дней после 4-го урока. Цены тестовые: Snapshot $0, диагностика {$29}/{$49}, Starter Month {$140}/{$180}, Founding Coach {$29/month} (UK {£24}). Они совпадают с `02-student-copy.md`; меняйте в обоих местах.
+- **Все сроки и цены в фигурных скобках `{…}` — допущения [Д]** из плана (§4.3, VF-064): сырые записи {90 days}, пары Before/Now и якоря — пока студент учится + {12 months}, возврат — {7} дней после 4-го урока. Цены тестовые: Snapshot $0, диагностика {$29}/{$49}, Starter Month {$140}/{$180}, Founding Coach {$29/month} (первая волна FC — US и CA; UK {£24} — только после DPA и решения по стране, план v1.1, раздел 0 №23). Они совпадают с `02-student-copy.md`; меняйте в обоих местах.
 - **Фраза «We never use your recordings to train AI»** стоит в фигурных скобках: её можно оставить, только если это правда для **всех** подрядчиков (транскрипция, LLM, хостинг) и подтверждено их DPA. Иначе — удалить.
 - **Согласия в `02-student-copy.md` (Snapshot, раздел 7 анкеты) нужно заменить на форму из раздела 1 ниже** после проверки юристом: здесь галочки разделены точнее (доступ педагога, улучшение сервиса по умолчанию выкл., публикация — только отдельной формой).
 - **Неконкуренцию в договор педагога не включаем** (решение плана). Раздел 4 — чек-лист для юриста, а не текст договора.
@@ -174,7 +175,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 
 1. **Prices are on the page before you sign up.** No "book a call to see pricing."
 2. **No countdown timers, no "only 3 spots left", no "price valid for 30 minutes".** If a week is full, we say so and tell you when we'll have room.
-3. **The Voice Snapshot is free, with no card.** We reply to every Snapshot within 48 hours. `[OWNER: only if the ≤10/week cap per coach is enforced]`
+3. **The Voice Snapshot is free, with no card.** We reply to every Snapshot within 48 hours. `[OWNER: only if the ≤5/week cap per coach is enforced — plan v1.1]`
 4. **No hidden fees.** The price you see is the price you pay{, plus sales tax / VAT where it applies}.
 5. **Pay once. Nothing renews.** The diagnostic lesson ({$29}) and the Starter Month ({$140}, 4 × 30-minute lessons) are one-time payments. We will not charge your card again unless you choose to buy again.
 6. **Not happy after your first month? Full refund.** Email {contact email} within {7 days} after your fourth Starter Month lesson. You don't need to give a reason or prove anything. We refund to your original payment method within {5 business days}.
@@ -186,7 +187,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 **Founding Coach terms (teachers, monthly)** — the only product that renews:
 
 - **6 weeks free, no card.** When the 6 weeks end, **we don't charge you automatically.** We email you: "Your free weeks end on {date}. Want to continue for {$29}/month?" You choose.
-- If you continue: {$29}/month (UK {£24}), billed monthly, **price locked for 12 months**, no percentage of your income, no annual prepayment.
+- If you continue: {$29}/month, billed monthly, **price locked for 12 months**, no percentage of your income, no annual prepayment.
 - Cancel any time in one click; you keep access until the end of the month you paid for. Reminder email {7 days} before each renewal. `[CHECK: legal, Q8]`
 - **Your data leaves with you:** export your clips, notes and student list at any time, including after you cancel (for {90 days}).
 
@@ -196,7 +197,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 - [ ] Stripe: products set to **one-time**, not subscription (Starter, diagnostic).
 - [ ] Founding Coach: no card collected at trial start; no automatic conversion.
 - [ ] Refund flow tested end-to-end once.
-- [ ] Refund reserve {10%} of Starter revenue set aside (plan §4.3).
+- [ ] Refund reserve {20%} of Starter revenue set aside (plan §4.3).
 - [ ] No timers/scarcity widgets in the landing builder template.
 
 ---
@@ -243,7 +244,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 **4.7 Safety and quality rules (part of the agreement)**
 - [ ] Pilot students are 18+ only; teacher stops recording and tells the owner if they learn a student is under 18.
 - [ ] Home Assignment Checklist on 100% of assignments (VF-030); "OK to sing at home" defaults to no.
-- [ ] Health flags: same-day reply; SLP-approved Refer-out Card (VF-065); no diagnoses.
+- [ ] Health flags: same-day reply; SLP-approved Refer-out Card (VF-065); no diagnoses. `[CHECK: SLP — do not use the Refer-out Card until the SLP approves it]`
 - [ ] No verdicts about talent, no scores to students (VF-001, VF-091).
 - [ ] **AI Gate (VF-025):** teacher approves every text a student sees; `caption_source` recorded; teacher may refuse any AI-rephrased text.
 
@@ -256,6 +257,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 - [ ] Customer terms (section 3, Founding Coach).
 - [ ] **DPA: coach = controller, VF = processor**; our student consent template given to the coach; only 18+ students; VF-030 rules as terms of use.
 - [ ] No Founding Coach recording is processed before the DPA is signed (plan §5.2).
+- [ ] **Safety terms for Founding Coaches (VF-013, plan v1.1):** students **18+ only**; health flags handled with the **Refer-out Card** and a named **flag schedule** (who replies to flags and when); until the VF library is approved, only **fragments of the student's own lesson** go home as practice. `[CHECK: SLP — the Refer-out Card is not given to coaches or used until the SLP approves it (VF-065)]`
 
 ---
 
@@ -270,10 +272,10 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 | **Q3** | **CCPA/CPRA and other state privacy laws.** Do we fall under CCPA at pilot scale? Even if not, what notice at collection, "do not sell/share" and deletion wording should we use? Is 30 days for deletion/export right? | VF-064 |
 | **Q4** | **Health-related notes.** Is "my voice hurts / is hoarse" health data under state laws (e.g., Washington My Health My Data Act), the FTC Health Breach Notification Rule, or UK GDPR Article 9? What is the minimum we may store, and for how long? | VF-064, VF-030, VF-065 |
 | **Q5** | **Biometrics: BIPA and similar laws (Texas, Washington, others).** We don't create voiceprints. Do raw voice recordings, transcription with speaker separation, or any vendor's processing count as biometric identifiers? What must vendors confirm in writing? Can we say "no voiceprints"? | VF-064, VF-025 |
-| **Q6** | **COPPA and minors.** Is a self-declared "18 or older" checkbox enough for an adults-only pilot? What must we do if we learn a user is under 13 or 13–17? What do the COPPA amendments (per backlog VF-063: in force from 22.04.2026, voice as personal information — verify) change for a later teen/child offer? | VF-063, VF-062 |
+| **Q6** | **COPPA and minors.** Is a self-declared "18 or older" checkbox enough for an adults-only pilot? What must we do if we learn a user is under 13 or 13–17? What do the COPPA amendments (per backlog VF-063: in force from 22.04.2026, voice as personal information — verify) change for a later teen/child offer? **Status of voice under COPPA:** is a voice recording personal information under COPPA as amended, and from what date? Until you answer, our plan treats this as a hypothesis, not a fact. | VF-063, VF-062 |
 | **Q7** | **DPA with LLM and transcription providers.** Required terms: no training on our data, retention limits, sub-processor list, breach notice, US↔UK/EU transfers. Is the provider's standard DPA enough? Can we then say "never used to train AI"? | VF-025, VF-064, VF-013 |
 | **Q8** | **Auto-renewal and cancellation.** Do state auto-renewal laws (e.g., California) and the FTC negative option rules apply to our one-time purchases at all? For the Founding Coach monthly plan: required disclosures, consent box, reminder timing, one-click cancel. Is "free 6 weeks with no automatic conversion" clean? | VF-007, VF-013 |
-| **Q9** | **FTC: guarantees, claims, reviews.** Is "Not happy after your first month? Full refund" enough as written? Are "Singing is a skill, not a gift" and "Your coach replies to your best take every week" safe claims? Rules for student clips/testimonials (FTC Endorsement Guides, rule on consumer reviews and testimonials), "Results vary", disclosure when something is given in return. | VF-007, VF-008, VF-002, VF-053 |
+| **Q9** | **FTC: guarantees, claims, reviews.** Is "Not happy after your first month? Full refund" enough as written? Are "Singing is a skill, not a gift" and "A real coach replies to your practice every week. No scores, no verdicts." safe claims? Is a refund window of {7} days after the fourth Starter Month lesson acceptable, or should it be longer (US and UK)? Rules for student clips/testimonials (FTC Endorsement Guides, rule on consumer reviews and testimonials), "Results vary", disclosure when something is given in return. | VF-007, VF-008, VF-002, VF-053 |
 | **Q10** | **Teacher status and pay.** Contractor vs employee for teachers paid per lesson, per Snapshot and hourly for async work (California AB5 / ABC test, other states; UK employment status). Does the `teacher_seconds` log or the VF-030 rules create "control" that points to employment? | VF-089, VF-058, VF-009 |
 | **Q11** | **UK GDPR and ICO.** Lawful basis for recordings (consent vs contract); is a DPIA needed; ICO registration/fee; UK→US transfers (Supabase region, vendors); UK retention and deletion (one month); moral-rights waiver in teacher IP assignment. | VF-064, VF-089, VF-025 |
 | **Q12** | **UK consumer terms.** 14-day cancellation rights for online purchases of lessons: what we must say, and how refunds work if lessons start within 14 days. VAT display. Does our Honest Pricing text need UK-specific changes? | VF-007, VF-008 |

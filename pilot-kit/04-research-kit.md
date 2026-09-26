@@ -2,19 +2,22 @@
 
 ## Для владельца (коротко)
 
+Синхронизировано с планом v1.1 (2026-09-26).
+
 **Что это.** Готовые материалы для VF-087 (Research Sprint) и VF-015 (набор педагогов только через сообщества). Всё ниже раздела «Contents» — английский текст для респондентов, модераторов и интервьюеров; можно копировать как есть в Google Docs / Tally / Typeform / Calendly.
 
 **Как это связано с планом (раздел 6, «Исследования»):**
 - Интервью с педагогами (15–20, нед. 0–8) = набор Founding Coaches. Один звонок, два результата. Порог: ≥10 называют «между уроками» в топ-3 → T1 подтверждён для вокала.
+- Набор FC (первая волна — US и CA) = интервью + вопрос "Which apps do your students already use?" (1.1, q17; VF-094).
 - Интервью со студентами (15–20, из них 3–5 ушедших; нед. 3–10) ведёт **исследователь, не методист и не педагог студента**. Порог: ≥3 ушедших называют «не видел(а) прогресса» → H2 приоритетна.
 - Владельцы школ (5–10) — по плану мес. 3 и только если есть часы (решение №3 раздела 9). Сценарий готов заранее.
 - Опрос студентов (300–400 ответов, мес. 3, с подрядчиком) и короткий опрос педагогов. Q «Where can you practice?» — дословно как в First Week Setup (02-student-copy §7), чтобы доли были сравнимы (H8, порог ≥30% «quiet/none»).
 
 **Что нужно решить / заполнить (помечено [OWNER]):**
 1. Кто ведёт интервью со студентами (исследователь на полставки или сам владелец) — решение №3.
-2. Благодарность за участие: сумма подарочной карты (предлагаем $25 / £20 за 30 мин студенту, $40 / £30 педагогу, $50 / £40 владельцу школы [Д]) и бюджет рекрутинга для опроса (решение №7).
+2. Благодарность за участие: сумма подарочной карты (предлагаем $25 / £20 за 30 мин студенту, $40 / £30 педагогу, $50 / £40 владельцу школы [Д]) и бюджет рекрутинга для опроса (решение №9 плана v1.1).
 3. Контакт для отзыва согласия и адрес для данных; кто хранит записи интервью; срок удаления (предлагаем: аудио удаляем через 90 дней после расшифровки [Д] — по аналогии с пилотом, подтвердить у юриста).
-4. Цены в Van Westendorp **респондентам не показываем** (иначе якорим). Тестовые цены плана [Д] — диагностика $29/$49, Starter ≈$35/$45 за урок-эквивалент, Founding Coach $29/мес (£24) — используем только при анализе: попадают ли они в «приемлемый диапазон».
+4. Цены в Van Westendorp **респондентам не показываем** (иначе якорим). Тестовые цены плана [Д] — диагностика $29/$49, Starter $140/$180 за месяц (план v1.1, 4.3), Founding Coach $29/мес (US и CA; £24 — только после DPA и решения по стране) — используем только при анализе: попадают ли они в «приемлемый диапазон».
 5. Разрешение админов на каждую публикацию в сообществах. Ни одна публикация не уходит без разрешения модератора.
 
 **Жёсткие правила (не обсуждаются):** только 18+; никаких оценок голоса и вердиктов о таланте в интервью (даже если просят «ну скажите, у меня есть голос?»); без давления и дефицита («only 3 spots left» — запрещено); на Reddit не продвигаемся и не рекрутируем; холодных массовых рассылок нет; связь с Voice Family раскрываем всегда; никаких фактов и цифр о рынке в текстах для респондентов, которых у нас нет.
@@ -90,7 +93,7 @@ Print this and keep it next to the guide.
 
 ### 1.1 Voice teacher interview (30 min)
 
-**Who:** private voice teachers, US first, then UK and AU. CCM / pop / musical theatre priority; 1–2 classical max. Teaches adults (at least some 18+ students). Online, in person, or hybrid.
+**Who:** private voice teachers in the US and Canada (first Founding Coach wave). UK and AU — not before a DPA and a country decision. CCM / pop / musical theatre priority; 1–2 classical max. Teaches adults (at least some 18+ students). Online, in person, or hybrid.
 **Goal:** what happens between lessons, how teachers see progress and early signs of leaving, unpaid time, tools they use and refuse. This is also how we meet potential Founding Coaches — but the interview is not a sales call.
 
 **Intro (2 min)**
@@ -123,15 +126,16 @@ Print this and keep it next to the guide.
 
 **Tools and money (3 min)** — *TOOLS, H6*
 16. **Show me** the tools you use to run your studio (scheduling, billing, recordings). What do you pay for each month?
-17. What's a tool you tried and stopped using? What made you stop?
-18. ◇ Have you ever charged more for a lesson that includes something extra (a recording, a practice plan)? What happened? *(Don't name a price. Only ask about what they did.)*
+17. Which apps do your students already use? *(For singing, practice or recording. Write the names verbatim.)*
+18. What's a tool you tried and stopped using? What made you stop?
+19. ◇ Have you ever charged more for a lesson that includes something extra (a recording, a practice plan)? What happened? *(Don't name a price. Only ask about what they did.)*
 
 **Last 3 minutes** — see 1.0.
 
 **Only if they ask what we're building (after the interview):**
 > "We're testing a simple loop with our own teachers: after a lesson the student gets a short practice task, sends one voice recording that week, and the coach replies by voice. We also keep a before/now pair so the student can hear the change. No scores, no student accounts, and the teacher approves every word. We're looking for a handful of Founding Coaches to try it with adult students. Would you like me to send details by email? No pressure at all."
 
-**Note-taker fields:** country, styles, # adult students, online/hybrid, top-3 problems (verbatim, in order), minutes/week between lessons (shown or estimated), paid? (y/n), leaving signs (verbatim), tools + monthly cost, interest in Founding Coach (none / asked for info / wants to try).
+**Note-taker fields:** country, styles, # adult students, online/hybrid, top-3 problems (verbatim, in order), minutes/week between lessons (shown or estimated), paid? (y/n), leaving signs (verbatim), tools + monthly cost, apps students already use (verbatim), interest in Founding Coach (none / asked for info / wants to try).
 
 ---
 
@@ -333,7 +337,7 @@ Intro text before Q14:
 > [If yes] We'll only use your email to arrange the chat. You can say no at any time.
 
 **Analysis notes (for owner, RU):**
-- Van Westendorp: кривые Q14–Q17 → диапазон приемлемой цены (PMC–PME) и оптимальная точка. Сравнить с тестовыми [Д] $35–45 за урок-эквивалент (≈$140–180 за месяц) — **попадает ли** в диапазон по US и UK отдельно. Выводы только при ≥100 валидных ответов в стране [Д].
+- Van Westendorp: кривые Q14–Q17 → диапазон приемлемой цены (PMC–PME) и оптимальная точка. Сравнить с тестовыми [Д] $140 / $180 за Starter Month (план v1.1, 4.3) — **попадает ли** в диапазон по US и UK отдельно. Выводы только при ≥100 валидных ответов в стране [Д].
 - Q18 — не прогноз конверсии; заявленное намерение завышено. Используем только для сравнения сегментов.
 - Q12 «I didn't notice myself improving» — сопоставить с порогом интервью (≥3 ушедших).
 - H8: доля Q7 «Only quietly» + «Only in the car» + «Nowhere» ≥30% → VF-048.
@@ -515,7 +519,7 @@ Subject: The pilot we mentioned
 >
 > **What it is:** after each lesson, your adult student gets a short practice task; once a week they send one recording, and you reply by voice. We keep a before/now pair so they can hear the change. No scores, no student accounts, and nothing reaches a student until you approve it. Nothing new to do during the lesson. It assists your teaching; it never replaces you.
 >
-> **The deal:** 6 weeks free, up to 5 adult (18+) students, no card needed. When the free weeks end, we don't charge you automatically — we'll email and ask whether you want to continue. If you do: $29/month [UK: £24], price fixed for 12 months, billed monthly until you cancel (one click, reminder 7 days before each renewal), export your data any time. We never take a cut of your lesson fees. Works alongside My Music Staff.
+> **The deal:** 6 weeks free, up to 5 adult (18+) students, no card needed. When the free weeks end, we don't charge you automatically — we'll email and ask whether you want to continue. If you do: $29/month, price fixed for 12 months, billed monthly until you cancel (one click, reminder 7 days before each renewal), export your data any time. We never take a cut of your lesson fees. Works alongside My Music Staff.
 >
 > **What we ask:** a short check-in call every two weeks and honest feedback.
 >
@@ -523,7 +527,7 @@ Subject: The pilot we mentioned
 >
 > [NAME]
 
-> Для владельца: $29/£24 — тестовые цены [Д] из плана (4.3). Письмо отправлять только после DPA и подписанного соглашения с правилами VF-030 (план 5.2: старт FC только после DPA).
+> Для владельца: $29 — тестовая цена [Д] из плана (4.3). Первая волна FC — только US и CA (план v1.1, 4.1). UK, AU и цена £24 — только после DPA и решения по стране; до этого письмо в UK/AU не отправляем и £24 не называем. Письмо отправлять только после DPA и подписанного соглашения с правилами VF-030 (план 5.2: старт FC только после DPA).
 
 **3.2g One follow-up (7 days, once)**
 

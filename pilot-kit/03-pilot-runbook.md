@@ -3,29 +3,35 @@
 <!--
 ДЛЯ ВЛАДЕЛЬЦА (RU, коротко)
 
+Синхронизировано с планом v1.1 (2026-09-26).
+
 Что это: рабочий регламент ручного пилота «Недели 0–2 → 8» (VF-011, VF-036, VF-022, VF-023, VF-056,
 VF-058, VF-060, VF-073, VF-088). Всё ниже линии — английский текст для команды пилота; приложение A —
 готовый текст PDF «Online Studio Check» для студентов (US; UK-варианты в скобках).
 Таблицы — в pilot-kit/templates/*.csv (только заголовки). Словарь колонок — раздел 10.
 
 Что заполнить / утвердить до старта (в тексте помечено [OWNER], [SLP], [DEV]):
-1. Имена людей на ролях, особенно ops-дежурный по флагам здоровья (решение №9 раздела 9 плана), и час,
-   после которого флаг закрывает ops-дежурный (сейчас заглушка [OWNER: 6 pm]).
+1. Имена людей на ролях, особенно дежурные по флагам здоровья на 7 дней с заменой на выходные
+   (решение №10 раздела 9 плана v1.1). Срок ответа на флаг — по плану 4.4 (§6).
 2. Где хранятся файлы (Drive-папка) и кто к ней имеет доступ; срок 90 дней — [Д] из VF-064, ждёт юриста.
 3. Платят ли пилотные студенты VF за пилот отдельно (в плане не решено). Тестовые цены (диагностика
-   $29/$49, Starter ≈$35/$45 за урок-эквивалент, без автопродления) — [Д], для пилота своих студентов
-   их не используем, пока владелец не решит.
-4. Порог «слышу разницу ≥4/5» из плана трактован как «медиана самооценки студента ≥4 по шкале 1–5» —
-   подтвердите или поправьте ДО начала замера (правило плана §10: пороги не меняем после старта).
+   $29/$49, Starter $140/$180 за месяц с правилом из плана 4.3, резерв на возвраты 20%, без
+   автопродления) — [Д], для пилота своих студентов их не используем, пока владелец не решит.
+4. Порог «слышу разницу» по плану v1.1: «I hear a difference ≥4 — у ≥7 из 10» (k из n, не медиана).
+   Прежняя заглушка [OWNER: confirm…] снята (правило плана §10: пороги не меняем после старта).
 5. Правила недели 4 — «ранние сигналы» [Д], ими нельзя закрыть или масштабировать пилот; это наша
    надстройка над планом, её тоже надо утвердить до старта.
 Технически: VF-023 в коде ветки уже исправлен — «02:14.5» принимается (секунды округляются вниз),
 «2.35» без двоеточия отклоняется как неоднозначное. Действует после выката ветки на Railway; до этого
 вводим целые секунды (памятка 01, §2.2, §11). lead_in один на весь запрос — эталоны режем отдельным
 запросом (раздел 4).
+Срок ответа на флаг (§6) приведён к плану 4.4: до конца дня по времени студента, флаг после 21:00 —
+до 12:00 следующего дня; заглушка [OWNER: 6 pm] снята.
+Все тексты о здоровье (Refer-out Card, шаблон «it hurts», стартовый набор домой) не использовать до
+одобрения SLP — это стоп-ворота (§2, §9.3).
 -->
 
-**Version 0.1 · Pilot weeks 0–8 · Internal — pilot team only**
+**Version 0.2 · Pilot weeks 0–8 · Internal — pilot team only**
 
 The pilot: **2 teachers × 5 adult students (18+), n = 10**, run by hand on the existing `/cut` service and the n8n "lesson review" workflow. Nothing new happens during the lesson. The loop is:
 
@@ -40,11 +46,12 @@ Fixed for the whole pilot (not up for trade-offs against metrics): voice safety,
 | Role | Who | Owns | Time (estimate [Д]) |
 |---|---|---|---|
 | **Owner** | [OWNER] | Go / no-go at weeks 2, 4, 8; consent forms and retention; prices; admin tools (§7); teacher pay for minutes over 20 and for Snapshots | ~1 h/week for decisions |
-| **Methodologist** | [OWNER] | Home Assignment Checklist audit; wording of replies and check-ins; Online Studio Check PDF sign-off; "over budget" weeks; reviews every health flag within 24 h | ≤8 h/week total, pilot share ~1 h |
+| **Methodologist** | [OWNER] | Home Assignment Checklist audit (100% of assignments); wording of replies and check-ins; Online Studio Check PDF sign-off; "over budget" weeks; reviews every health flag within 24 h | ≤8 h/week total, pilot share ~1 h **+ assignment audit 0.5–1 h/week** |
 | **Teachers (T1, T2)** | [OWNER] | Lesson as usual; moments; captions and tasks; weekly voice reply; Before/Now pair; logging their own minutes | ≤20 min/week async for 5 students |
 | **Ops on-call** | [OWNER] — a named person, not "the team" | Runs `/cut` when the teacher doesn't; checks `ok / failed / skipped`; sends recaps the teacher approved; keeps all tables; Quiet Churn review; covers health flags the teacher can't answer the same day | ~2–3 h/week [Д] |
+| **Health-flag on-call** | [OWNER] — named people for **all 7 days**, with a named **weekend cover** | Answers any health flag the teacher can't answer in time. The 7-day roster is a stop gate (§2) | Outside the budget; per flag |
 | **Developer** | [OWNER] | VF-023 fixes, VF-022 alert and status table, n8n workflow; fixes anything logged as `pipeline` in `pilot-flags.csv` | Per plan: 6.5 of 8 days in weeks 0–2 |
-| **SLP / voice doctor** | [OWNER] | Approves the refer-out card and "it hurts" template before the first home assignment | 1–2 h |
+| **SLP / voice doctor** | [OWNER] | Approves, before the first home assignment: the Refer-out Card, the "it hurts" template, every [SLP] / [CHECK: SLP] note in the pilot kit, the Snapshot recording instruction, and the starter home set (1–2 SOVT exercises, load 1). Later: the card library (VF-086, VF-033) | **8–11 h over 8 weeks** |
 
 **Escalation in one line:** health → teacher, then ops on-call, same day; tech → ops, then developer; time over budget → methodologist; anything about age, consent, or privacy → owner, and recording stops until resolved.
 
@@ -59,7 +66,11 @@ Nothing is recorded until every line is ✓.
 - [ ] Age 18+ confirmed **before** any recording (First Week Setup form); logged in `pilot-students.csv`.
 - [ ] "Where can you practice?" answered (quiet / some noise / none) and logged.
 - [ ] Online students received the **Online Studio Check** (Appendix A) at least 2 days before lesson 1 — **only if the methodologist has already signed it off.** Per plan §5.1 its review moves to week 3 (VF-056), so it is not a stop gate for recording.
-- [ ] Refer-out card and "it hurts" template approved by SLP. Until then teachers use only: *"Please stop singing for now, and check in with a doctor or voice specialist."*
+- [ ] **Stop gate:** Refer-out Card and "it hurts" template approved by SLP. Not approved → no recording and no home assignments.
+- [ ] **Stop gate:** no unapproved [SLP] or [CHECK: SLP] notes left in any student-facing text. Texts carrying them are not used or sent until SLP approves.
+- [ ] **Stop gate:** health-flag on-call roster for 7 days, with named weekend cover (§1).
+- [ ] **Stop gate:** starter home set approved — until the card library is approved, only fragments of the student's own lesson marked **OK to sing at home** + 1–2 SOVT exercises, load 1, approved by SLP, go home.
+- [ ] **Stop gate:** each teacher briefed on Handbook §5 and checked (incl. "worrying sound → no exercise, Refer-out").
 - [ ] VF-023 acceptance check passed in production (§4.5) — or ops knows the workarounds in §4.3.
 - [ ] n8n Error Trigger alert goes to the ops on-call channel and was tested once with a deliberately broken request.
 - [ ] Drive folders created with the access rules in §5.
@@ -76,11 +87,11 @@ Nothing is recorded until every line is ✓.
 |---|---|---|---|---|
 | **L − 1** | Ops (auto-send if possible) | Pre-lesson check-in goes out (§3.1) | Sent | `pilot-homework.csv` → `checkin_sent_at` |
 | **L** (lesson) | Teacher | Teach as usual. The lesson is recorded (Zoom cloud/local, or room recorder). Online students also run a backup recording (Appendix A). **Lesson 1 only:** the student's first home-style recording is made *in the lesson* and you listen together. Before that, the student does not record alone | Recording exists | `pilot-lessons.csv` → `recording_received_at`, `recording_source` |
-| **L, within 2 h after** | Teacher | Enter 2–4 moments in the n8n form: your demo (reference), the student's best take, and the two halves of a Before/Now pair (§3.2). Timecode = the moment the phrase **starts** | Moments submitted | `pilot-teacher-time.csv` → `timecodes` |
+| **L, within 2 h after** | Teacher | Enter 2–4 moments in the n8n form: your demo (reference), the student's lesson take, and the two halves of a Before/Now pair (§3.2). Timecode = the moment the phrase **starts** | Moments submitted | `pilot-teacher-time.csv` → `timecodes` |
 | **L, same day** | n8n / ops | `/cut` runs with `lesson_id`, `lead_in=3`, each clip `duration` 15–20 (§4). Ops checks `ok / failed / skipped` | `failed = 0` and `skipped = []`, or §4.4 followed | `pilot-lessons.csv` → `cut_*` columns |
 | **L + 0–1** | Teacher | Listen to each clip once. Approve / edit / reject captions (✓ / ✎ / ✗). Run the Home Assignment Checklist (Handbook §5.1); set **OK to sing at home** (default: no). Mark "Keep for next week" if the task carries over | All clips approved; checklist passed | `pilot-lessons.csv` → `ai_gate_*`, `checklist_passed`, `ok_to_sing_at_home` |
-| **Within 24 h of lesson end** | Ops | Send the recap: reference clip, best take, Before/Now pair with "what changed," task (1–2 items), stop line. Only teacher-approved text | Recap sent | `pilot-lessons.csv` → `recap_sent_at` |
-| **L + 1 … L + 5** | Student | Practices. Records as many takes as they like; **sends one** chosen take ("coach hears it first"). Answers the reflection question; may mark ⭐ best moment | Take received | `pilot-homework.csv` → `take_submitted_at` |
+| **Within 24 h of lesson end** | Ops | Send the recap: reference clip, lesson take, Before/Now pair with "what changed," task (1–2 items), stop line. Only teacher-approved text | Recap sent | `pilot-lessons.csv` → `recap_sent_at` |
+| **L + 1 … L + 5** | Student | Practices. Records **one** home take and sends it ("coach hears it first") — no need to redo it many times (plan v1.1, change 1). Answers the reflection question; may mark ⭐ best moment | Take received | `pilot-homework.csv` → `take_submitted_at` |
 | **Within 48 h of the take** | Teacher | One voice reply, 30–60 s: one win → why → 1–2 tasks. If the student reacts "same" or "let's discuss," answer by voice — counts as that week's reply | Reply sent | `pilot-homework.csv` → `reply_sent_at`; `pilot-teacher-time.csv` |
 | **With or after the reply** | Ops | Ask the student one question about the Before/Now pair (§3.2). Record whether they opened it | Answer or no answer logged | `pilot-homework.csv` → `pair_opened`, `hear_difference_1to5` |
 | **L + 6 (= next L − 1)** | Ops | Next check-in (§3.1). Update the Quiet Churn view (§8) | Table updated | `pilot-homework.csv`, `pilot-flags.csv` |
@@ -102,10 +113,16 @@ Rules: never reply with "you missed…"; never show the student a count of days 
 
 - Same phrase, same key, two takes. **Lessons 1–2:** both takes from the same lesson, captioned **"in this lesson."** **From lesson 3:** an earlier lesson may be the "Before."
 - Caption: *"Before/Now (in this lesson): [phrase]. What changed: [one audible change]."*
-- No honest change → no pair. Log `pair = skipped_no_honest_change`. Never force one.
+- No honest change → no pair. The teacher writes *"no clear change this lesson"* instead; log `pair = skipped_no_honest_change`. This honest note counts for the lesson in §9.5, the same as a pair. Never force one.
 - Question sent to the student after they've had time to listen:
  > *"Did you get a chance to listen to your Before/Now clip? If yes — how clearly can you hear a difference? 1 = not at all, 5 = very clearly. Any answer is useful."*
  This is the student's own rating of what they hear. It is never turned into a score about their voice, and never shown back to them as a number.
+
+### 3.3 Reminder Rules (VF-096)
+
+- **≤4–5 reminders a week**, never after **9 pm** (student's time zone).
+- **Off** while a health flag is open ("hurts," "hoarse," "I'm sick") and after "A bit tired" two weeks running.
+- None on a rest day and none on the lesson day.
 
 ---
 
@@ -119,8 +136,8 @@ Rules: never reply with "you missed…"; never show the student a count of days 
 |---|---|
 | `file` | The lesson recording (or the student's backup recording, §4.6) |
 | `lesson_id` | Always set. Format: `T1-S03-L02-20261005` (teacher – student – lesson number – date). The same ID goes in every table and in the Drive folder name |
-| `lead_in` | **3** for reference, best take, and Before/Now clips. The clip starts 3 s before the timecode |
-| `cuts` | JSON array, ≤20 items, e.g. `[{"time":"02:14","duration":18,"caption":"Coach demo - verse 1"}, {"time":"07:40","duration":16,"caption":"Best take - verse 1"}]` |
+| `lead_in` | **3** for reference, lesson take, and Before/Now clips. The clip starts 3 s before the timecode |
+| `cuts` | JSON array, ≤20 items, e.g. `[{"time":"02:14","duration":18,"caption":"Coach demo - verse 1"}, {"time":"07:40","duration":16,"caption":"Your lesson take - verse 1"}]` |
 
 - `duration`: **15–20 s** per clip for reference and pairs. Enough for one phrase, short enough to replay many times.
 - `caption` becomes part of the **file name** (`1. 02-14 — Coach demo - verse 1.mp3`, max 80 characters). Keep it a short label. **Never put the student's name** in it. The student-facing text goes in the recap message, not the file name.
@@ -190,7 +207,7 @@ This is ops work — it is not in the teacher's time.
 VF Pilot/
   raw/{lesson_id}/                 lesson recording, backup recording      — delete at 90 days [Д]
   students/{student_id}/
-    {lesson_id}/lesson-clips/      reference, best take, Before/Now         — keep while a student + 12 months [Д]
+    {lesson_id}/lesson-clips/      reference, lesson take, Before/Now       — keep while a student + 12 months [Д]
     {lesson_id}/home-takes/        the take the student sent                — delete at 90 days [Д]
     {lesson_id}/replies/           teacher's voice reply                    — keep while a student + 12 months [Д]
   admin/                           the six tables
@@ -209,7 +226,7 @@ VF Pilot/
 
 | What | Target | Measured in | Who covers a miss |
 |---|---|---|---|
-| Health flag ("hurts," "hoarse," "lost my voice") → first reply | **Same day, 100%**. If it arrives after [OWNER: 6 pm], ops on-call sends the SLP-approved holding reply the same evening; the teacher follows up next day | `pilot-flags.csv` | Ops on-call |
+| Health flag ("hurts," "hoarse," "lost my voice") → first reply | **Same day, 100%**: by the end of the day in the student's time zone; a flag that arrives after 9 pm student time — by 12 noon the next day (plan v1.1, 4.4 [Д]). Until someone replies, the student doesn't sing. If the teacher can't make the deadline, the on-call person sends the SLP-approved holding reply; the teacher follows up next day | `pilot-flags.csv` | Ops on-call |
 | Weekly voice reply | **≤48 h** after the student sends their take | `pilot-homework.csv` → `reply_hours` | Teacher; if a teacher is off, ops tells the student when to expect the reply — no silence |
 | Recap after lesson | **<24 h** in ≥90% of lessons (≥36 of 40) | `pilot-lessons.csv` → `recap_hours` | Ops |
 | Lost lessons | **0** | `pilot-lessons.csv` → `lesson_status` | Developer + owner review |
@@ -233,7 +250,7 @@ We **connect, not build.** Scheduling and money stay in the tool the teacher alr
 Rules:
 
 - **Flexible prepaid packages, no auto-renewal** for anything we sell. Starter Month is a one-time payment. If Stripe is used, don't create a subscription product for students.
-- **Test prices only [Д], owner approves before use:** diagnostic lesson $29 vs $49; Starter Month ≈ $35 vs ≈ $45 per lesson-equivalent, with *"Not happy after your first month? Full refund."* No countdowns, "only 2 spots left," or other scarcity counters — anywhere.
+- **Test prices only [Д], owner approves before use:** diagnostic lesson $29 vs $49; Starter Month $140 vs $180 per Starter Month, with *"Not happy after your first month? Full refund."* Rule (plan 4.3): keep the $140 + $29 pair only if the median Snapshot takes ≤3 min **or** Snapshot → diagnostic ≥20%; otherwise raise one of the two prices. Refund reserve 20%; any refund among the first 5 purchases at $140 → move to $180 or $49. No countdowns, "only 2 spots left," or other scarcity counters — anywhere.
 - Whether current VF students pay anything extra for the pilot: [OWNER — not decided in the plan].
 - Teachers log **admin minutes separately** (`activity = admin` in `pilot-teacher-time.csv`, outside the 20-minute budget). This tells us whether offloading worked. We publish **no** "saves X hours" claims until this log supports them (VF-088).
 - Setup: 1 day of owner time. Integration with our tools: not before month 3.
@@ -246,11 +263,11 @@ Adults rarely announce they're leaving; they go quiet. Among (child) instrument 
 
 **Signal (any one):**
 
-1. **≤2 practice days in each of 2 consecutive weeks** (self-reported in the check-in; a week with no answer counts as unknown, not 0), or
+1. **0–1 practice days in each of 2 consecutive weeks** (plan v1.1, change 19; self-reported in the check-in; a week with no answer counts as unknown, not 0), or
 2. **2 lessons in a row without a Before/Now pair**, or
 3. **A rescheduled or cancelled lesson** (from MMS/Calendly).
 
-**Never a signal:** weeks marked "I'm sick," "A bit tired," or a health flag. Those weeks are excluded — the student is doing the right thing.
+**Never a signal:** weeks marked "I'm sick," "Hoarse, sore or it hurts" (or any open health flag), or "A bit tired" two weeks running. Those weeks are excluded — the student is doing the right thing.
 
 **Ops, every Monday (~15 min):** filter `pilot-homework.csv` by the rules above → add a row per new signal to `pilot-flags.csv` (`flag_type = quiet_churn`, `trigger_rule = practice_days | no_pair | reschedule`). One open quiet-churn flag per student at a time.
 
@@ -273,21 +290,23 @@ Close the flag with `outcome = contact_made | no_reply | student_paused | studen
 - **Cohorts, not A/B**, inside the product. With n = 10 we don't split students into groups. A/B only on the landing page.
 - **n = 10 is small.** Every result is written as **"k of n"** and treated as a *direction*, not proof. Pilot data is at most reliability B, always with n.
 - **Thresholds are fixed before we measure** and never moved afterwards. Changes go in the version log with a date.
-- **Sick weeks** leave the denominator.
+- **Weeks marked sick, hurts, hoarse, or tired two weeks running** leave the denominator. Safe behavior is never penalized.
 - **Success of the pilot** = students *say* they hear a difference (student-reported) and renew. Not activity, not minutes, not streaks.
 - **Nothing public** from this pilot without the student's separate consent. No time-saving numbers in marketing until the time log supports them. Any ad or testimonial carries "Results vary" and, where applicable, #ad.
 - Every decision is written into the backlog with its source and tag [Ф] / [В] / [Д].
 
 ### 9.2 What we measure
 
-**North Star (months 0–3): Weekly Coached Recorders (WCR)** — students who, in that week, sent **≥1 home take** *and* received **≥1 teacher reply approved through the AI Gate**. Report as `k / (active − sick)`.
+**North Star (months 0–3): Weekly Coached Recorders (WCR)** — students who, in that week, sent **≥1 home take** *and* received **≥1 teacher reply approved through the AI Gate**. Report as `k / (active − (sick, hurts, hoarse, tired×2 weeks))`.
 
 | Guardrail | Threshold | Source table |
 |---|---|---|
-| Singing after "hurts"; clip sent home without "OK to sing at home" or above the lesson's top note | **0**; checklist audit on 100% of assignments | `pilot-lessons`, `pilot-flags` |
-| Health flag → teacher reply + refer-out when needed | **Same day, 100%** | `pilot-flags` |
+| **Safety breach** — any one of: (1) singing after "hurts"; (2) a task above the lesson's top note or without "OK to sing at home" (`solo_ok`); (3) a health flag not answered in time; (4) load 3 or RANGE_EDGE without the teacher assigning it | **0**; checklist audit on 100% of assignments. Any breach pauses that teacher's home assignments until reviewed | `pilot-lessons`, `pilot-flags` |
+| Health flag → teacher reply + refer-out when needed | **Same day, 100%**: by the end of the day in the student's time zone; after 9 pm — by 12 noon next day (§6) | `pilot-flags` |
+| 25 min/day home limit (VF-030) | Until there is a player: **0** student messages about >25 min **and** 100% of assignments ≤15 min by the checklist. Never call this metric "measured" | `pilot-lessons`, `pilot-flags` |
+| Pressure (VF-096) | Notifications turned off by **≤1 of 10**; **0** reminders after 9 pm or while a health flag is open | `pilot-flags` |
 | Teacher time | Median **≤20 min/week** per teacher; weeks over 20 min **≤1 of 5** | `pilot-teacher-time` |
-| Trust | "I felt judged" **≤1 of 5** who answered; "anxious" **≤2 of 5** | Coach Fit Check after lesson 3 |
+| Trust | "I felt judged" ≥4 — **≤1 of n** who answered; "anxious" ≥4 — **≤2 of 10** (k of n who answered ≥4) | Coach Fit Check after lesson 3 |
 | AI Gate | **0** unapproved texts sent; **≥80%** of captions approved without edits | `pilot-lessons` |
 | Numbers about the voice shown to a student | **0** | `pilot-flags` (any breach logged) |
 | Reliability | Recap <24 h in **≥90%** of lessons; **0** lost lessons | `pilot-lessons` |
@@ -302,13 +321,13 @@ Any guardrail breach is reviewed **the same week**, regardless of the calendar b
 
 | Result | Condition | Action |
 |---|---|---|
-| **Stop** | Any student without signed consent is being recorded, **or** an LLM step is on without a DPA | Recording stops today. Nothing resumes until fixed |
+| **Stop** | Any one of: a student without signed consent is being recorded; an LLM step is on without a DPA; Refer-out Card not approved by SLP; unapproved [SLP] or [CHECK: SLP] notes left in student-facing texts; no 7-day health-flag on-call roster; starter home set not approved; a teacher hasn't passed the briefing | Recording and home assignments stop (or don't start). Nothing resumes until fixed |
 | **Limit** | No owner answer on who writes captions (plan §9 decision 1 / conflict №15) | Pilot runs; "your words" is not used anywhere |
-| **Go** | `/cut` fixes live and §4.5 passed; **10 of 10** with consent; ≥1 teacher running 5 students; landing page takes sign-ups; ≥5 teacher conversations booked | Continue to week 4 |
+| **Go** | `/cut` fixes live and §4.5 passed; **10 of 10** with consent; ≥1 teacher running 5 students; landing page takes sign-ups; ≥5 teacher conversations booked; audit of the first 10 replies against the VF-035 template — **≥9 of 10** | Continue to week 4 |
 | **Rework** | No time log | Week 3 goes on getting the time log working |
-| **Time check (H9)** | Median ≤3 min per student per week | Teacher may take a 6th student |
+| **Time check (H9)** | Median ≤3 min per student per week **and** the 10-reply template audit passed (both required) | Teacher may take a 6th student |
 | | ≈4 min per student (≤20 min total) | Stay at 5 |
-| | >4 min per student | Plan R2: keep 5 students, voice reply every 2 weeks (health flags excluded), move manual AI Gate work to methodologist; minutes over 20 paid explicitly |
+| | >4 min per student | 4 students per teacher; captions via ops (ops transcribes the teacher's voice note, the teacher taps ✓); minutes over 20 paid explicitly |
 | **Founding Coaches (R4)** | <8 teacher conversations | Owner reviews own hours (plan decision №3) |
 
 ### 9.4 Week 4 — early signals [Д, runbook proposal — owner approves before start]
@@ -328,13 +347,15 @@ Week 4 **cannot** close or scale anything; it only triggers a review.
 
 | Decision | Scale | Rework | Close |
 |---|---|---|---|
-| **Homework loop (VF-011, n = 10)** | **≥5 of 10** send ≥1 take/week for 4 consecutive weeks **and** **≤2 of 10** left **and** teacher median ≤20 min | 3–4 of 10, **or** teacher spends 20–30 min → reply every 2 weeks (except health flags) | **≤2 of 10** → playlist only, no code written |
-| **Before/Now (VF-036, ≈40 lessons)** | Pair in **≥28 of 40** lessons; opened by **≥5 of 10** students; "hear a difference" (student-reported) **≥4 of 5** [OWNER: confirm reading as median ≥4 on the 1–5 scale] | Pair in 20–27 of 40, **or** opened by 3–4 of 10 | Opened by **≤2 of 10** → passport (VF-038) not built |
+| **Homework loop (VF-011, n = 10)** | **≥5 of 10** send ≥1 take/week for 4 consecutive weeks **and** **≤2 of 10** left **and** teacher median ≤20 min | 3–4 of 10, **or** teacher spends 20–30 min → reply every 2 weeks (except health flags) + student copy VF-006/VF-008 changed before any sales | **≤2 of 10** → playlist only, no code written |
+| **Before/Now (VF-036, ≈40 lessons)** | Counted in **≥28 of 40** lessons (a pair **or** the honest note "no clear change this lesson"); opened by **≥5 of 10** students; "I hear a difference" (student-reported) ≥4 — by **≥7 of 10**; blind check of 5 pairs a month passed | Counted in 20–27 of 40, **or** opened by 3–4 of 10 | Opened by **≤2 of 10** → passport (VF-038) not built |
 | **Teacher time (VF-058)** | Median ≤20 min at week 2 **and** week 8 | 20–30 min → shorten the voice reply | >30 min → pilot stops; loop simplified |
 | **Quiet Churn (VF-060)** | Report only: signals followed by contact (k of n); flagged students still active (k of n) | — | — |
+| **Starter, H4 (VF-008, VF-010)** | Report only "k of n"; the decision is made **at month 3**, not week 8 | Refunds ≥1 of 5 → $180 or $49 | Refunds ≥2 of 10 → $140 closed |
+| **Safety (VF-030)** | 0 breaches (§9.2, 4 items) | — | Any breach → pause until reviewed |
 | **Online Studio Check (VF-056)** | Report only: median minutes on sound at lesson start, before vs after the PDF; share of online lessons without sound problems (k of n) | — | — |
 
-Retention is reported as k of 10 over 4 weeks. Renewal after lesson 5 is compared with **earlier VF cohorts**, and any positive gap is described only as "compatible with H2" — never as proof that hearing progress causes renewal.
+Retention is reported as k of 10 over 4 weeks. Renewal after lesson 5 is compared with **earlier VF cohorts** ("k of n vs k of n for the same period"); the weeks 0–8 cohort does **not** count as "new." Any positive gap is described only as "compatible with H2" — never as proof that hearing progress causes renewal.
 
 ---
 
@@ -462,3 +483,4 @@ If Zoom is running on your only phone, skip this — most phones can't record wh
 | Version | Date | Change | Data |
 |---|---|---|---|
 | 0.1 | 2026-09-26 | First runbook from product plan v1.0, decisions VF-011, VF-022, VF-023, VF-036, VF-056, VF-058, VF-060, VF-073, VF-088 | None yet — all time estimates [Д] |
+| 0.2 | 2026-09-26 | Synced with product plan v1.1 §11: roles (7-day flag on-call, SLP 8–11 h, assignment audit), stop gates, "lesson take," Reminder Rules, Starter $140/$180, WCR denominator, safety breach, week 2 and week 8 rules | None yet — all thresholds [Д] |

@@ -2,6 +2,7 @@
 
 <!--
 ДЛЯ ВЛАДЕЛЬЦА (RU, коротко)
+Синхронизировано с планом v1.1 (2026-09-26)
 
 Что это: готовая памятка для 2 педагогов ручного пилота «Недели 0–2» (VF-001, VF-011, VF-025, VF-030,
 VF-035, VF-036, VF-043, VF-044, VF-054, VF-058, VF-063). Всё ниже линии — английский текст для педагогов,
@@ -11,10 +12,12 @@ VF-035, VF-036, VF-043, VF-044, VF-054, VF-058, VF-063). Всё ниже лин�
 1. Имена и контакты: методист, ops-дежурный по флагам здоровья (ответ в тот же день), канал связи.
 2. Refer-out текст (шаблон 9) и список red flags — черновик по weekly-homework-spec §2.6; до выдачи
    должен одобрить SLP/фониатр (VF-065, 1–2 ч). Без одобрения шаблон 9 не используем, пишем только
-   «please check in with a doctor or voice specialist».
+   «please check in with a doctor or voice specialist». Пометки [SLP: …] (§5.5, шаблон 9) не снимаем до
+   одобрения SLP — это стоп-ворота недели 2 (план v1.1, раздел 11).
 3. Кто пишет подписи в n8n (решение №1 раздела 9). Памятка написана под вариант «пишет педагог,
    LLM-шаг снят до DPA». Если LLM останется — раздел 8 надо переписать.
-4. Оплата минут сверх 20/нед и Snapshot (решение №5) — в разделе 9 стоит заглушка.
+4. Оплата минут сверх 20/нед и Snapshot (решение №6 плана v1.1; лимит Snapshot ≤5 в неделю на педагога —
+   решение №5) — в разделе 9 стоит заглушка.
 5. Числа (4 мин на студента, 5 студентов, 25 мин/день, ≤48 ч) — [Д] из плана, не факты; пересмотр
    после хронометража недели 2.
 Текст — US English. Для UK: practice→practise (глагол), semester→term; «pupil» допустим в разговоре педагогов, но в текстах
@@ -31,7 +34,7 @@ VF-035, VF-036, VF-043, VF-044, VF-054, VF-058, VF-063). Всё ниже лин�
 If you read nothing else, read this.
 
 1. **Teach your lesson exactly as you do now.** Nothing new happens during the lesson.
-2. **After the lesson, spend about 4 minutes per student:** pick 2–4 timecodes (your demo, the student's best take, the two halves of a Before/Now pair) and give 1–2 tasks. Once a week, send one voice reply to the home take the student chose.
+2. **After the lesson, spend about 4 minutes per student:** pick 2–4 timecodes (your demo, the student's lesson take, the two halves of a Before/Now pair) and give 1–2 tasks. Once a week, send one voice reply to the home take the student chose.
 3. **Never judge talent.** No "natural," no "not a singer," no voice-type labels before diagnosis.
 4. **Every piece of feedback = one specific win → why it worked → 1–2 tasks.**
 5. **Nothing goes home to sing unless you marked it "OK to sing at home."** The default is no.
@@ -76,7 +79,7 @@ Your honest feedback — including "this takes too long" or "students don't care
 
 | Step | What you do | Time (estimate) |
 |---|---|---|
-| 1 | Pick **2–4 timecodes** from the recording: your demonstration (reference), the student's best take, and the two halves of the Before/Now pair (step 3) | ~0.5 min |
+| 1 | Pick **2–4 timecodes** from the recording: your demonstration (reference), the student's lesson take, and the two halves of the Before/Now pair (step 3) | ~0.5 min |
 | 2 | Choose **one reference clip** — your demo of the phrase or exercise the student will practice | included above |
 | 3 | Pick the **Before/Now pair** (see §2.4) | ~0.5 min |
 | 4 | Write or approve the **captions** and the **task** (1–2 tasks max), using the Feedback Template (§4) | ~1 min |
@@ -186,9 +189,10 @@ These rules are not optional and they are not up for trade against any metric. W
 Tick every box before you approve an assignment. If one box fails, fix it or don't send.
 
 - [ ] **"OK to sing at home" is set on purpose.** The default is **no**. Clips without the flag go home as *listen-only*.
+- [ ] **Only the starter set goes home to sing.** Until the exercise library is approved, the only things a student sings at home are fragments of *their own lesson* marked "OK to sing at home," plus 1–2 load-1 SOVT exercises approved by the SLP. Nothing else — no exercises from other sources, even if they seem gentle.
 - [ ] **Top note ≤ the top note the student sang comfortably in this lesson** (and ≤ their working range). The home top never goes higher than the lesson top.
 - [ ] **No load-3 work at home:** no range edges, no belt, no loud climaxes, no loud mix, no fry/distortion/screaming, no hard onsets, no breath-holding, no "endurance" drills — **unless you personally assigned it and wrote why.**
-- [ ] **Session length and daily limit stated:** a normal home session is **10–15 minutes** (12–15 in the first two weeks, up to 20 later only if you decide). **25 minutes of singing a day is a hard ceiling, not a target** — the task says so. One session a day at most; missed sessions don't pile up.
+- [ ] **Session length and daily limit stated:** a normal home session is **10–15 minutes** (12–15 in the first two weeks, up to 20 later only if you decide). **25 minutes of singing a day is a hard ceiling, not a target** — the task says so. Every task you assign is **≤15 minutes** of singing. We can't measure home singing time yet, so going over 25 minutes is tracked only from what the student tells you: if a student mentions singing longer, note it in the tracking sheet. One session a day at most; missed sessions don't pile up.
 - [ ] **Rest built in:** no singing on the lesson day itself; the day after the lesson is **listening only**; at least **one more full rest day** in the week; the day before the next lesson is a light version (no top notes, medium-soft volume). No two sessions in a row that touch the top of the range.
 - [ ] **Stop line included:** every task ends with the stop line — *"If your throat tickles, pulls, or hurts, stop. That's not being lazy, that's looking after your voice."*
 - [ ] **Words are yours:** you wrote or approved every word of the caption and task (§8), and it follows the Feedback Template (§4).
@@ -216,11 +220,12 @@ Tell students plainly in lesson 1: *"Stopping early is always the right call. Yo
 When a student reports pain, hoarseness, or a stop signal:
 
 1. **All singing homework is off** until *you* decide otherwise. There's no automatic timeout. Listening and silent breathing only.
-2. **Reply the same day** (template 8 or 9). This does not come out of your 20-minute budget and is never cut to save time.
-3. If you can't reply that day, the **on-call flags contact** does: [OWNER: name, contact].
-4. **Do not diagnose.** Don't guess causes, don't suggest medication, don't say "it's probably nothing."
-5. Health messages are handled **by people only** — never paste them into any AI tool.
-6. Don't keep health details in your notes beyond "flag raised / replied / referred."
+2. **Reply the same day** (template 8 or 9): by the end of the day **in the student's time zone**; if the flag arrives after 9 pm student time, by 12 noon the next day. Until someone replies, the student doesn't sing. This does not come out of your 20-minute budget and is never cut to save time.
+3. If you can't reply by that deadline, the **on-call flags contact** does: [OWNER: name, contact].
+4. **An alarming sound in a home take counts as a flag too,** even if the student didn't report anything (e.g., hoarseness, the voice cutting out, strain you can hear). Don't send an exercise for that take; send the Refer-out reply (§5.5) instead, and tell the on-call flags contact the same day.
+5. **Do not diagnose.** Don't guess causes, don't suggest medication, don't say "it's probably nothing."
+6. Health messages are handled **by people only** — never paste them into any AI tool.
+7. Don't keep health details in your notes beyond "flag raised / replied / referred."
 
 ### 5.5 Where our job ends: SLP / ENT
 
@@ -234,7 +239,7 @@ We're voice teachers, not clinicians. **Refer out** — recommend the student se
 
 **Don't wait for any threshold — tell the student to get medical help now** [SLP: confirm list] if they mention: trouble breathing (emergency services), coughing up blood, severe or sudden pain, or a sudden complete loss of voice after a shout, strain or injury. Then tell the methodologist the same day.
 
-Use template 9 (pending SLP approval). When in doubt, refer — referring out is never wrong.
+**Items marked [SLP: …] are not approved yet. Do not use template 9 or the thresholds and list above as final wording until the SLP approves them;** until then, write only *"please check in with a doctor or voice specialist."* When in doubt, refer — referring out is never wrong.
 
 ---
 
@@ -323,7 +328,7 @@ Fill the brackets. Adapt freely to your own voice — but keep the shape (win �
 > "Hi [name], glad you asked. [Answer their question in one or two sentences.] Here's how to try it: [concrete how]. If it still doesn't click, we'll go through it at the start of our next lesson."
 
 **4. Lesson recap caption (text)**
-> "Win: [what worked in today's lesson]. Why: [what you did]. This week: [task 1]; [task 2 if any]. Clips: my demo, your best take, and a Before/Now 'in this lesson.' Listen-only clips are marked — please don't sing those at home yet."
+> "Win: [what worked in today's lesson]. Why: [what you did]. This week: [task 1]; [task 2 if any]. Clips: my demo, your lesson take, and a Before/Now 'in this lesson.' Listen-only clips are marked — please don't sing those at home yet."
 
 **5. Before/Now caption**
 > "Before/Now (in this lesson): [phrase]. What changed: [one audible change — e.g., the vowel on 'light' opened up, so the note rang instead of pinching]."
@@ -337,7 +342,7 @@ Fill the brackets. Adapt freely to your own voice — but keep the shape (win �
 **8. Tired twice in a row**
 > "Hi [name], I saw 'tired' twice this week — thanks for telling me, that's exactly right. Let's go easy: warm-up, listening, and cool-down only until our next lesson. How's your voice when you're speaking? If it feels scratchy or hoarse, stop singing completely and let me know today."
 
-**9. "It hurts" / hoarse — same-day reply** *[SLP: approve wording before use]*
+**9. "It hurts" / hoarse — same-day reply** *[SLP: approve wording before use]* — **do not use until the SLP approves it.** Until then, write only: "please check in with a doctor or voice specialist."
 > "Hi [name], thank you for telling me. Please stop all singing for now — listening only, no humming or warm-ups until we talk. Rest your voice, sip water, and avoid shouting or whispering. I'm not able to diagnose anything, but if the hoarseness or pain lasts more than [2 weeks — SLP to confirm], or it's getting worse, please see an ENT or a speech-language pathologist who works with singers [UK: your GP, an ENT, or a speech and language therapist]. If you have trouble breathing, cough up blood, have severe pain, or lost your voice completely and suddenly, please get medical help straight away — don't wait for me. Stopping early is always the right call — you're not behind. Let me know how it feels [tomorrow / in two days]."
 
 **10. Clip failed / recording missing**
