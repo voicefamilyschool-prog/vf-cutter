@@ -8,16 +8,18 @@
 VF-035, VF-036, VF-043, VF-044, VF-054, VF-058, VF-063). Всё ниже линии — английский текст для педагогов,
 его можно отдавать как есть (PDF / Google Doc / Notion).
 
-Что осталось заполнить или утвердить перед выдачей (помечено [OWNER] / [SLP] в тексте):
+Что осталось заполнить или утвердить перед выдачей (помечено [OWNER] / [OWNER/METHODIST] в тексте):
 1. Имена и контакты: методист, ops-дежурный по флагам здоровья (ответ в тот же день), канал связи.
 2. Refer-out текст (шаблон 9) и список red flags — черновик по weekly-homework-spec §2.6; до выдачи
-   должен одобрить SLP/фониатр (VF-065, 1–2 ч). Без одобрения шаблон 9 не используем, пишем только
-   «please check in with a doctor or voice specialist». Пометки [SLP: …] (§5.5, шаблон 9) не снимаем до
-   одобрения SLP — это стоп-ворота недели 2 (план v1.1, раздел 11).
+   должны утвердить владелец и методист школы (VF-065; логопед/SLP не привлекается — план, раздел 12).
+   Без утверждения шаблон 9 не используем, пишем только «please check in with a doctor or voice
+   specialist». Пометки [OWNER/METHODIST: …] (§5.5, шаблон 9) не снимаем до утверждения владельцем
+   и методистом — это стоп-ворота недели 2 (план v1.1, разделы 11–12).
 3. Кто пишет подписи в n8n (решение №1 раздела 9). Памятка написана под вариант «пишет педагог,
    LLM-шаг снят до DPA». Если LLM останется — раздел 8 надо переписать.
-4. Оплата минут сверх 20/нед и Snapshot (решение №6 плана v1.1; лимит Snapshot ≤5 в неделю на педагога —
-   решение №5) — в разделе 9 стоит заглушка.
+4. Оплата: вся работа вне урока (домашка, Snapshot, одобрение подписей) входит в ставку педагога,
+   поштучной/почасовой оплаты нет (план, раздел 12). Лимиты ≤20 мин/нед на домашку и ≤5 Snapshot в неделю
+   на педагога — защита от перегрузки; учёт минут — контроль нагрузки, а не основание для оплаты (раздел 9).
 5. Числа (4 мин на студента, 5 студентов, 25 мин/день, ≤48 ч) — [Д] из плана, не факты; пересмотр
    после хронометража недели 2.
 Текст — US English. Для UK: practice→practise (глагол), semester→term; «pupil» допустим в разговоре педагогов, но в текстах
@@ -189,7 +191,7 @@ These rules are not optional and they are not up for trade against any metric. W
 Tick every box before you approve an assignment. If one box fails, fix it or don't send.
 
 - [ ] **"OK to sing at home" is set on purpose.** The default is **no**. Clips without the flag go home as *listen-only*.
-- [ ] **Only the starter set goes home to sing.** Until the exercise library is approved, the only things a student sings at home are fragments of *their own lesson* marked "OK to sing at home," plus 1–2 load-1 SOVT exercises approved by the SLP. Nothing else — no exercises from other sources, even if they seem gentle.
+- [ ] **Only the starter set goes home to sing.** Until the exercise library is approved, the only things a student sings at home are fragments of *their own lesson* marked "OK to sing at home," plus 1–2 load-1 SOVT exercises approved by the owner and the methodologist. Nothing else — no exercises from other sources, even if they seem gentle.
 - [ ] **Top note ≤ the top note the student sang comfortably in this lesson** (and ≤ their working range). The home top never goes higher than the lesson top.
 - [ ] **No load-3 work at home:** no range edges, no belt, no loud climaxes, no loud mix, no fry/distortion/screaming, no hard onsets, no breath-holding, no "endurance" drills — **unless you personally assigned it and wrote why.**
 - [ ] **Session length and daily limit stated:** a normal home session is **10–15 minutes** (12–15 in the first two weeks, up to 20 later only if you decide). **25 minutes of singing a day is a hard ceiling, not a target** — the task says so. Every task you assign is **≤15 minutes** of singing. We can't measure home singing time yet, so going over 25 minutes is tracked only from what the student tells you: if a student mentions singing longer, note it in the tracking sheet. One session a day at most; missed sessions don't pile up.
@@ -231,15 +233,15 @@ When a student reports pain, hoarseness, or a stop signal:
 
 We're voice teachers, not clinicians. **Refer out** — recommend the student see an ENT (laryngologist) or a speech-language pathologist (SLP) who works with singers — when:
 
-- hoarseness or voice change lasts **more than 2 weeks** [SLP: confirm threshold];
+- hoarseness or voice change lasts **more than 2 weeks** [OWNER/METHODIST: confirm threshold];
 - pain when singing or speaking that doesn't go away with rest;
 - sudden voice loss, or the voice "cracks" or cuts out in a new way;
 - the student mentions a known voice or medical condition, surgery, or medication that dries the throat;
 - anything that feels outside your training.
 
-**Don't wait for any threshold — tell the student to get medical help now** [SLP: confirm list] if they mention: trouble breathing (emergency services), coughing up blood, severe or sudden pain, or a sudden complete loss of voice after a shout, strain or injury. Then tell the methodologist the same day.
+**Don't wait for any threshold — tell the student to get medical help now** [OWNER/METHODIST: confirm list] if they mention: trouble breathing (emergency services), coughing up blood, severe or sudden pain, or a sudden complete loss of voice after a shout, strain or injury. Then tell the methodologist the same day.
 
-**Items marked [SLP: …] are not approved yet. Do not use template 9 or the thresholds and list above as final wording until the SLP approves them;** until then, write only *"please check in with a doctor or voice specialist."* When in doubt, refer — referring out is never wrong.
+**Items marked [OWNER/METHODIST: …] are not approved yet. Do not use template 9 or the thresholds and list above as final wording until the owner and the methodologist approve them;** until then, write only *"please check in with a doctor or voice specialist."* When in doubt, refer — referring out is never wrong.
 
 ---
 
@@ -283,9 +285,9 @@ For the pilot, **the LLM step is switched off.** You write the captions and task
 
 - **Budget: 20 minutes per week** of async work for all your pilot students (≈4 minutes × 5 students).
 - **Log your minutes** every time — start/stop, per student — in the tracking sheet [OWNER: link]. Rough is fine; missing is not. This is the single most important number in the pilot.
-- **Outside the budget** (log separately, never cut): health-flag replies, Snapshot replies.
-- **If you go over 20 minutes,** don't cut corners and don't work for free — log it and tell the methodologist. The fix is ours: fewer students, a reply every two weeks, or handing the approval step to the methodologist.
-- Pay for minutes over 20 and for Snapshots: [OWNER: to be confirmed].
+- **Outside the 20 minutes** (log separately, never cut): health-flag replies, Snapshot replies. Snapshots are capped at **5 per week** per teacher.
+- **If you go over 20 minutes,** don't cut corners and don't quietly absorb it — log it and tell the methodologist. The fix is ours: fewer students, a reply every two weeks, or handing the approval step to the methodologist.
+- **Pay:** all work between lessons (homework replies, Snapshots, caption approvals) is included in your lesson rate — there's no separate per-Snapshot or per-minute pay. The limits above exist to keep that workload fair; your logged minutes are how we check it, not a billing record.
 - Honest minutes help us more than fast-looking minutes. A slow week is data, not failure.
 
 ---
@@ -342,8 +344,8 @@ Fill the brackets. Adapt freely to your own voice — but keep the shape (win �
 **8. Tired twice in a row**
 > "Hi [name], I saw 'tired' twice this week — thanks for telling me, that's exactly right. Let's go easy: warm-up, listening, and cool-down only until our next lesson. How's your voice when you're speaking? If it feels scratchy or hoarse, stop singing completely and let me know today."
 
-**9. "It hurts" / hoarse — same-day reply** *[SLP: approve wording before use]* — **do not use until the SLP approves it.** Until then, write only: "please check in with a doctor or voice specialist."
-> "Hi [name], thank you for telling me. Please stop all singing for now — listening only, no humming or warm-ups until we talk. Rest your voice, sip water, and avoid shouting or whispering. I'm not able to diagnose anything, but if the hoarseness or pain lasts more than [2 weeks — SLP to confirm], or it's getting worse, please see an ENT or a speech-language pathologist who works with singers [UK: your GP, an ENT, or a speech and language therapist]. If you have trouble breathing, cough up blood, have severe pain, or lost your voice completely and suddenly, please get medical help straight away — don't wait for me. Stopping early is always the right call — you're not behind. Let me know how it feels [tomorrow / in two days]."
+**9. "It hurts" / hoarse — same-day reply** *[OWNER/METHODIST: approve wording before use]* — **do not use until the owner and the methodologist approve it.** Until then, write only: "please check in with a doctor or voice specialist."
+> "Hi [name], thank you for telling me. Please stop all singing for now — listening only, no humming or warm-ups until we talk. Rest your voice, sip water, and avoid shouting or whispering. I'm not able to diagnose anything, but if the hoarseness or pain lasts more than [2 weeks — OWNER/METHODIST to confirm], or it's getting worse, please see an ENT or a speech-language pathologist who works with singers [UK: your GP, an ENT, or a speech and language therapist]. If you have trouble breathing, cough up blood, have severe pain, or lost your voice completely and suddenly, please get medical help straight away — don't wait for me. Stopping early is always the right call — you're not behind. Let me know how it feels [tomorrow / in two days]."
 
 **10. Clip failed / recording missing**
 > "Hi [name], quick heads-up: the recording from today's lesson didn't come through properly, so your clips are missing this week — sorry about that. Your task still stands: [task in words]. We'll make a new reference clip in our next lesson."

@@ -10,7 +10,7 @@ VF-058, VF-060, VF-073, VF-088). Всё ниже линии — английск
 готовый текст PDF «Online Studio Check» для студентов (US; UK-варианты в скобках).
 Таблицы — в pilot-kit/templates/*.csv (только заголовки). Словарь колонок — раздел 10.
 
-Что заполнить / утвердить до старта (в тексте помечено [OWNER], [SLP], [DEV]):
+Что заполнить / утвердить до старта (в тексте помечено [OWNER], [OWNER/METHODIST], [DEV]):
 1. Имена людей на ролях, особенно дежурные по флагам здоровья на 7 дней с заменой на выходные
    (решение №10 раздела 9 плана v1.1). Срок ответа на флаг — по плану 4.4 (§6).
 2. Где хранятся файлы (Drive-папка) и кто к ней имеет доступ; срок 90 дней — [Д] из VF-064, ждёт юриста.
@@ -28,7 +28,11 @@ VF-058, VF-060, VF-073, VF-088). Всё ниже линии — английск
 Срок ответа на флаг (§6) приведён к плану 4.4: до конца дня по времени студента, флаг после 21:00 —
 до 12:00 следующего дня; заглушка [OWNER: 6 pm] снята.
 Все тексты о здоровье (Refer-out Card, шаблон «it hurts», стартовый набор домой) не использовать до
-одобрения SLP — это стоп-ворота (§2, §9.3).
+утверждения владельцем и методистом школы — это стоп-ворота (§2, §9.3). Логопед (SLP) не привлекается
+(решение владельца 2026-09-27, план §12 п.6).
+Работа педагога вне урока (ответы на домашку, Snapshot, одобрение подписей) входит в ставку — никаких
+поштучных или почасовых доплат (план §12 п.5). Лимиты (≤20 мин/нед на домашку, ≤5 Snapshot/нед на
+педагога) — защита от перегрузки; teacher_seconds — учёт нагрузки, а не основание для оплаты.
 -->
 
 **Version 0.2 · Pilot weeks 0–8 · Internal — pilot team only**
@@ -45,13 +49,12 @@ Fixed for the whole pilot (not up for trade-offs against metrics): voice safety,
 
 | Role | Who | Owns | Time (estimate [Д]) |
 |---|---|---|---|
-| **Owner** | [OWNER] | Go / no-go at weeks 2, 4, 8; consent forms and retention; prices; admin tools (§7); teacher pay for minutes over 20 and for Snapshots | ~1 h/week for decisions |
-| **Methodologist** | [OWNER] | Home Assignment Checklist audit (100% of assignments); wording of replies and check-ins; Online Studio Check PDF sign-off; "over budget" weeks; reviews every health flag within 24 h | ≤8 h/week total, pilot share ~1 h **+ assignment audit 0.5–1 h/week** |
+| **Owner** | [OWNER] | Go / no-go at weeks 2, 4, 8; consent forms and retention; prices; admin tools (§7). With the methodologist, approves before the first home assignment: the Refer-out Card, the "it hurts" template, every [OWNER/METHODIST] note in the pilot kit, the Snapshot recording instruction, and the starter home set (1–2 SOVT exercises, load 1); later, the card library (VF-086, VF-033) | ~1 h/week for decisions |
+| **Methodologist** | [OWNER] | Health-text approval together with the owner (see Owner row); Home Assignment Checklist audit (100% of assignments); wording of replies and check-ins; Online Studio Check PDF sign-off; "over budget" weeks; reviews every health flag within 24 h | ≤8 h/week total, pilot share ~1 h **+ assignment audit 0.5–1 h/week** |
 | **Teachers (T1, T2)** | [OWNER] | Lesson as usual; moments; captions and tasks; weekly voice reply; Before/Now pair; logging their own minutes | ≤20 min/week async for 5 students |
 | **Ops on-call** | [OWNER] — a named person, not "the team" | Runs `/cut` when the teacher doesn't; checks `ok / failed / skipped`; sends recaps the teacher approved; keeps all tables; Quiet Churn review; covers health flags the teacher can't answer the same day | ~2–3 h/week [Д] |
 | **Health-flag on-call** | [OWNER] — named people for **all 7 days**, with a named **weekend cover** | Answers any health flag the teacher can't answer in time. The 7-day roster is a stop gate (§2) | Outside the budget; per flag |
 | **Developer** | [OWNER] | VF-023 fixes, VF-022 alert and status table, n8n workflow; fixes anything logged as `pipeline` in `pilot-flags.csv` | Per plan: 6.5 of 8 days in weeks 0–2 |
-| **SLP / voice doctor** | [OWNER] | Approves, before the first home assignment: the Refer-out Card, the "it hurts" template, every [SLP] / [CHECK: SLP] note in the pilot kit, the Snapshot recording instruction, and the starter home set (1–2 SOVT exercises, load 1). Later: the card library (VF-086, VF-033) | **8–11 h over 8 weeks** |
 
 **Escalation in one line:** health → teacher, then ops on-call, same day; tech → ops, then developer; time over budget → methodologist; anything about age, consent, or privacy → owner, and recording stops until resolved.
 
@@ -66,10 +69,10 @@ Nothing is recorded until every line is ✓.
 - [ ] Age 18+ confirmed **before** any recording (First Week Setup form); logged in `pilot-students.csv`.
 - [ ] "Where can you practice?" answered (quiet / some noise / none) and logged.
 - [ ] Online students received the **Online Studio Check** (Appendix A) at least 2 days before lesson 1 — **only if the methodologist has already signed it off.** Per plan §5.1 its review moves to week 3 (VF-056), so it is not a stop gate for recording.
-- [ ] **Stop gate:** Refer-out Card and "it hurts" template approved by SLP. Not approved → no recording and no home assignments.
-- [ ] **Stop gate:** no unapproved [SLP] or [CHECK: SLP] notes left in any student-facing text. Texts carrying them are not used or sent until SLP approves.
+- [ ] **Stop gate:** Refer-out Card and "it hurts" template approved by the owner and the methodologist. Not approved → no recording and no home assignments.
+- [ ] **Stop gate:** no unapproved [OWNER/METHODIST] notes left in any student-facing text. Texts carrying them are not used or sent until the owner and the methodologist approve.
 - [ ] **Stop gate:** health-flag on-call roster for 7 days, with named weekend cover (§1).
-- [ ] **Stop gate:** starter home set approved — until the card library is approved, only fragments of the student's own lesson marked **OK to sing at home** + 1–2 SOVT exercises, load 1, approved by SLP, go home.
+- [ ] **Stop gate:** starter home set approved — until the card library is approved, only fragments of the student's own lesson marked **OK to sing at home** + 1–2 SOVT exercises, load 1 (nothing at the top of the range), approved by the owner and the methodologist, go home.
 - [ ] **Stop gate:** each teacher briefed on Handbook §5 and checked (incl. "worrying sound → no exercise, Refer-out").
 - [ ] VF-023 acceptance check passed in production (§4.5) — or ops knows the workarounds in §4.3.
 - [ ] n8n Error Trigger alert goes to the ops on-call channel and was tested once with a deliberately broken request.
@@ -97,7 +100,7 @@ Nothing is recorded until every line is ✓.
 | **L + 6 (= next L − 1)** | Ops | Next check-in (§3.1). Update the Quiet Churn view (§8) | Table updated | `pilot-homework.csv`, `pilot-flags.csv` |
 | **Every Monday** | Ops | Fill one row of `pilot-metrics-weekly.csv` (§9) for the previous week | Row filled | `pilot-metrics-weekly.csv` |
 
-**Any day, any time — health flag.** A student writes "it hurts," "hoarse," "I lost my voice," or picks "hurts": the teacher (or ops on-call if the teacher can't) replies **the same day** with the SLP-approved template, and all singing stops. If the student mentions trouble breathing, coughing up blood, severe or sudden pain, or a sudden complete loss of voice, the reply tells them to get medical help now (emergency services for breathing) — nobody waits for the refer-out threshold. Log in `pilot-flags.csv`. Health flags are **outside** the 20-minute budget and are never cut to save time.
+**Any day, any time — health flag.** A student writes "it hurts," "hoarse," "I lost my voice," or picks "hurts": the teacher (or ops on-call if the teacher can't) replies **the same day** with the template approved by the owner and the methodologist, and all singing stops. If the student mentions trouble breathing, coughing up blood, severe or sudden pain, or a sudden complete loss of voice, the reply tells them to get medical help now (emergency services for breathing) — nobody waits for the refer-out threshold. Log in `pilot-flags.csv`. Health flags are **outside** the 20-minute budget and are never cut to save time.
 
 ### 3.1 Pre-lesson check-in (send as is)
 
@@ -226,7 +229,7 @@ VF Pilot/
 
 | What | Target | Measured in | Who covers a miss |
 |---|---|---|---|
-| Health flag ("hurts," "hoarse," "lost my voice") → first reply | **Same day, 100%**: by the end of the day in the student's time zone; a flag that arrives after 9 pm student time — by 12 noon the next day (plan v1.1, 4.4 [Д]). Until someone replies, the student doesn't sing. If the teacher can't make the deadline, the on-call person sends the SLP-approved holding reply; the teacher follows up next day | `pilot-flags.csv` | Ops on-call |
+| Health flag ("hurts," "hoarse," "lost my voice") → first reply | **Same day, 100%**: by the end of the day in the student's time zone; a flag that arrives after 9 pm student time — by 12 noon the next day (plan v1.1, 4.4 [Д]). Until someone replies, the student doesn't sing. If the teacher can't make the deadline, the on-call person sends the holding reply approved by the owner and the methodologist; the teacher follows up next day | `pilot-flags.csv` | Ops on-call |
 | Weekly voice reply | **≤48 h** after the student sends their take | `pilot-homework.csv` → `reply_hours` | Teacher; if a teacher is off, ops tells the student when to expect the reply — no silence |
 | Recap after lesson | **<24 h** in ≥90% of lessons (≥36 of 40) | `pilot-lessons.csv` → `recap_hours` | Ops |
 | Lost lessons | **0** | `pilot-lessons.csv` → `lesson_status` | Developer + owner review |
@@ -321,13 +324,13 @@ Any guardrail breach is reviewed **the same week**, regardless of the calendar b
 
 | Result | Condition | Action |
 |---|---|---|
-| **Stop** | Any one of: a student without signed consent is being recorded; an LLM step is on without a DPA; Refer-out Card not approved by SLP; unapproved [SLP] or [CHECK: SLP] notes left in student-facing texts; no 7-day health-flag on-call roster; starter home set not approved; a teacher hasn't passed the briefing | Recording and home assignments stop (or don't start). Nothing resumes until fixed |
+| **Stop** | Any one of: a student without signed consent is being recorded; an LLM step is on without a DPA; Refer-out Card not approved by the owner and the methodologist; unapproved [OWNER/METHODIST] notes left in student-facing texts; no 7-day health-flag on-call roster; starter home set not approved; a teacher hasn't passed the briefing | Recording and home assignments stop (or don't start). Nothing resumes until fixed |
 | **Limit** | No owner answer on who writes captions (plan §9 decision 1 / conflict №15) | Pilot runs; "your words" is not used anywhere |
 | **Go** | `/cut` fixes live and §4.5 passed; **10 of 10** with consent; ≥1 teacher running 5 students; landing page takes sign-ups; ≥5 teacher conversations booked; audit of the first 10 replies against the VF-035 template — **≥9 of 10** | Continue to week 4 |
 | **Rework** | No time log | Week 3 goes on getting the time log working |
 | **Time check (H9)** | Median ≤3 min per student per week **and** the 10-reply template audit passed (both required) | Teacher may take a 6th student |
 | | ≈4 min per student (≤20 min total) | Stay at 5 |
-| | >4 min per student | 4 students per teacher; captions via ops (ops transcribes the teacher's voice note, the teacher taps ✓); minutes over 20 paid explicitly |
+| | >4 min per student | 4 students per teacher; captions via ops (ops transcribes the teacher's voice note, the teacher taps ✓); work between lessons stays within the teacher's rate — no extra pay for minutes over 20; the load is cut instead |
 | **Founding Coaches (R4)** | <8 teacher conversations | Owner reviews own hours (plan decision №3) |
 
 ### 9.4 Week 4 — early signals [Д, runbook proposal — owner approves before start]
@@ -381,7 +384,7 @@ All in `pilot-kit/templates/`, headers only. One row per:
 - `pair`: `in_this_lesson`, `across_lessons`, `skipped_no_honest_change`, `skipped_tech`.
 - `lesson_status`: `recorded`, `cut`, `approved`, `recap_sent`, `sent_without_clips`, `lost`.
 
-**`teacher_seconds` rule:** start a timer when you open the work, stop when you send. One row per activity. Round to the nearest 10 s. Don't estimate afterwards — a missing row is better than a guessed one (and mark the week `time_log_complete = no`).
+**`teacher_seconds` rule:** start a timer when you open the work, stop when you send. One row per activity. Round to the nearest 10 s. Don't estimate afterwards — a missing row is better than a guessed one (and mark the week `time_log_complete = no`). `teacher_seconds` tracks workload only; it is **not** a basis for pay. All work between lessons (replies, Snapshots, caption approval) is included in the teacher's rate. Limits protect against overload: ≤20 min/week on homework, ≤5 Snapshots per teacher per week.
 
 ---
 
@@ -483,4 +486,5 @@ If Zoom is running on your only phone, skip this — most phones can't record wh
 | Version | Date | Change | Data |
 |---|---|---|---|
 | 0.1 | 2026-09-26 | First runbook from product plan v1.0, decisions VF-011, VF-022, VF-023, VF-036, VF-056, VF-058, VF-060, VF-073, VF-088 | None yet — all time estimates [Д] |
-| 0.2 | 2026-09-26 | Synced with product plan v1.1 §11: roles (7-day flag on-call, SLP 8–11 h, assignment audit), stop gates, "lesson take," Reminder Rules, Starter $140/$180, WCR denominator, safety breach, week 2 and week 8 rules | None yet — all thresholds [Д] |
+| 0.2 | 2026-09-26 | Synced with product plan v1.1 §11: roles (7-day flag on-call, assignment audit), stop gates, "lesson take," Reminder Rules, Starter $140/$180, WCR denominator, safety breach, week 2 and week 8 rules | None yet — all thresholds [Д] |
+| 0.3 | 2026-09-27 | Owner decisions (plan §12 items 5–6): no SLP — health texts approved by the owner and the methodologist; SLP role and hours removed; all teacher work between lessons included in the rate, no per-Snapshot or over-20-minute pay; `teacher_seconds` = workload tracking only | — |

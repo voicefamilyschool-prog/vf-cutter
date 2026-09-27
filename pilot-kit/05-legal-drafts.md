@@ -156,7 +156,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 | Captions + `caption_source` + AI Gate decision (✓/✎/✗) | {…} | Same as clips | Monthly job | Developer |
 | Health flag note ("hurts / hoarse", no medical details) | `pilot-flags.csv` | {90 days}, then keep only date + outcome, no free text `[CHECK: legal, Q4]` | Ops, monthly | Ops |
 | Consent records | {…} | Longest data retention + {3 years} | Manual | Owner |
-| `teacher_seconds` time log | `pilot-teacher-time.csv` | {24 months} (pay records) `[CHECK: legal]` | Manual | Ops |
+| `teacher_seconds` time log | `pilot-teacher-time.csv` | {24 months} (workload records) `[CHECK: legal]` | Manual | Ops |
 | Age = under 18 answer | — | Not stored; form data discarded | Form logic | Developer |
 
 **Rules**
@@ -210,14 +210,14 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 - [ ] Employee vs independent contractor — per state/country of each teacher `[CHECK: legal — AB5 / ABC test, UK employment status, Q10]`.
 - [ ] Scope: live lessons + asynchronous work (listening to home recordings, voice replies, approving captions ✓/✎/✗, Home Assignment Checklist, Voice Snapshots, same-day health-flag replies, filming days).
 
-**4.2 Pay — no unpaid work (backlog VF-089: «работа педагога не бывает бесплатной»)**
-- [ ] Live lesson rate: {…}.
-- [ ] **Asynchronous work paid:** {hourly rate}, based on `teacher_seconds` log (teacher sees and can correct their own log). Budget ≤20 min/week per 5 students; **minutes over 20 are paid, not absorbed** `[OWNER: rate]`.
-- [ ] **Voice Snapshot:** paid per Snapshot {$…}, outside the 20-minute budget.
-- [ ] **Health-flag replies:** paid, outside the budget, never cut to save time.
+**4.2 Pay — work between lessons is included in the rate (решение владельца 2026-09-27, план §12)**
+- [ ] Lesson rate: {…} `[OWNER: rate]`.
+- [ ] **Work between lessons is included in the rate; its volume is capped by limits.** Listening to home recordings, voice replies, approving captions, Home Assignment Checklist, Voice Snapshots and health-flag replies are covered by the lesson rate. **No per-Snapshot, per-review or hourly payments** for this work.
+- [ ] **Limits (protection from overload, not a basis for pay):** homework ≤20 min/week per 5 students; ≤5 Voice Snapshots per week per teacher. If the limits are regularly exceeded, VF reduces the load (fewer students/Snapshots), not the teacher's quality.
+- [ ] **Health-flag replies:** same-day, never cut to save time; they are part of the included work.
 - [ ] **Filming days / showcase / Demo Vault recording:** day or hourly rate {…} + any reuse fee `[OWNER]`.
 - [ ] Payment terms: {net 14}, monthly statement.
-- [ ] Time log is for pay and workload only — **not** used for performance ranking without the teacher's written consent (VF-080).
+- [ ] `teacher_seconds` log is for workload tracking only (teacher sees and can correct their own log), not a basis for pay — **not** used for performance ranking without the teacher's written consent (VF-080).
 
 **4.3 IP assignment**
 - [ ] Teacher assigns to VF the rights in materials **created for VF**: fix recipes, exercise cards, warm-up recordings, demo clips, videos, captions and written feedback templates.
@@ -235,7 +235,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 - [ ] VF keeps assigned materials (recipes, clips, videos) and may continue using them; credit line kept or removed at the teacher's choice `[OWNER]`.
 - [ ] Access to all student data ends on the last day; teacher confirms in writing that no student recordings are kept on personal devices.
 - [ ] Students are told and offered another coach; their data stays with VF under the student's consent.
-- [ ] Final payment for all logged async minutes within {14 days}.
+- [ ] Final payment for all lessons delivered within {14 days} (work between lessons is included in the lesson rate).
 
 **4.6 No non-compete**
 - [ ] **No non-compete clause.** The teacher may teach anywhere, including privately, during and after working with VF.
@@ -244,7 +244,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 **4.7 Safety and quality rules (part of the agreement)**
 - [ ] Pilot students are 18+ only; teacher stops recording and tells the owner if they learn a student is under 18.
 - [ ] Home Assignment Checklist on 100% of assignments (VF-030); "OK to sing at home" defaults to no.
-- [ ] Health flags: same-day reply; SLP-approved Refer-out Card (VF-065); no diagnoses. `[CHECK: SLP — do not use the Refer-out Card until the SLP approves it]`
+- [ ] Health flags: same-day reply; Refer-out Card approved by the owner and the school's methodist (VF-065); no diagnoses. `[OWNER/METHODIST: confirm — do not use the Refer-out Card until the owner and methodist approve it]`
 - [ ] No verdicts about talent, no scores to students (VF-001, VF-091).
 - [ ] **AI Gate (VF-025):** teacher approves every text a student sees; `caption_source` recorded; teacher may refuse any AI-rephrased text.
 
@@ -257,7 +257,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 - [ ] Customer terms (section 3, Founding Coach).
 - [ ] **DPA: coach = controller, VF = processor**; our student consent template given to the coach; only 18+ students; VF-030 rules as terms of use.
 - [ ] No Founding Coach recording is processed before the DPA is signed (plan §5.2).
-- [ ] **Safety terms for Founding Coaches (VF-013, plan v1.1):** students **18+ only**; health flags handled with the **Refer-out Card** and a named **flag schedule** (who replies to flags and when); until the VF library is approved, only **fragments of the student's own lesson** go home as practice. `[CHECK: SLP — the Refer-out Card is not given to coaches or used until the SLP approves it (VF-065)]`
+- [ ] **Safety terms for Founding Coaches (VF-013, plan v1.1):** students **18+ only**; health flags handled with the **Refer-out Card** and a named **flag schedule** (who replies to flags and when); until the VF library is approved, only **fragments of the student's own lesson** go home as practice. `[OWNER/METHODIST: confirm — the Refer-out Card is not given to coaches or used until the owner and methodist approve it (VF-065)]`
 
 ---
 
@@ -276,7 +276,7 @@ If Voice Family ever closes, we'll give you at least {60 days}' notice and a way
 | **Q7** | **DPA with LLM and transcription providers.** Required terms: no training on our data, retention limits, sub-processor list, breach notice, US↔UK/EU transfers. Is the provider's standard DPA enough? Can we then say "never used to train AI"? | VF-025, VF-064, VF-013 |
 | **Q8** | **Auto-renewal and cancellation.** Do state auto-renewal laws (e.g., California) and the FTC negative option rules apply to our one-time purchases at all? For the Founding Coach monthly plan: required disclosures, consent box, reminder timing, one-click cancel. Is "free 6 weeks with no automatic conversion" clean? | VF-007, VF-013 |
 | **Q9** | **FTC: guarantees, claims, reviews.** Is "Not happy after your first month? Full refund" enough as written? Are "Singing is a skill, not a gift" and "A real coach replies to your practice every week. No scores, no verdicts." safe claims? Is a refund window of {7} days after the fourth Starter Month lesson acceptable, or should it be longer (US and UK)? Rules for student clips/testimonials (FTC Endorsement Guides, rule on consumer reviews and testimonials), "Results vary", disclosure when something is given in return. | VF-007, VF-008, VF-002, VF-053 |
-| **Q10** | **Teacher status and pay.** Contractor vs employee for teachers paid per lesson, per Snapshot and hourly for async work (California AB5 / ABC test, other states; UK employment status). Does the `teacher_seconds` log or the VF-030 rules create "control" that points to employment? | VF-089, VF-058, VF-009 |
+| **Q10** | **Teacher status and pay.** Contractor vs employee for teachers paid per lesson, with work between lessons (async review, Snapshots) included in the lesson rate and capped by limits (California AB5 / ABC test, other states; UK employment status). Does the `teacher_seconds` log or the VF-030 rules create "control" that points to employment? | VF-089, VF-058, VF-009 |
 | **Q11** | **UK GDPR and ICO.** Lawful basis for recordings (consent vs contract); is a DPIA needed; ICO registration/fee; UK→US transfers (Supabase region, vendors); UK retention and deletion (one month); moral-rights waiver in teacher IP assignment. | VF-064, VF-089, VF-025 |
 | **Q12** | **UK consumer terms.** 14-day cancellation rights for online purchases of lessons: what we must say, and how refunds work if lessons start within 14 days. VAT display. Does our Honest Pricing text need UK-specific changes? | VF-007, VF-008 |
 

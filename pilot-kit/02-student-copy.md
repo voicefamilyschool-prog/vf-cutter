@@ -12,8 +12,8 @@
   1. «A person listens. No AI scores your voice» — верно, пока LLM-шаг снят (нет DPA, решение №15 плана). Если LLM вернётся, фразу меняем.
   2. «Never used to train AI» — только если это правда для всех подрядчиков (VF-064). Пока фраза стоит как условная.
   3. Возврат, автопродление, согласие на запись, хранение 90 дней — юрист (раздел 9, п. 4).
-  4. Refer-out, стоп-сигналы и инструкцию к записи Snapshot — текст должен одобрить SLP (VF-065). Все места с `[CHECK: SLP…]` **не публиковать до одобрения SLP**; пометки снимаем только после одобрения. Ни одной неодобренной пометки [SLP] — условие стоп-ворот недели 2.
-  5. Упражнения в ответах Snapshot — только нагрузки 1 без верха, из списка, одобренного SLP. Если списка нет, упражнения в ответе нет (VF-009).
+  4. Refer-out, стоп-сигналы и инструкцию к записи Snapshot — текст утверждают владелец и методист школы (VF-065; логопеда не привлекаем, решение владельца 2026-09-27, план §12). Все места с `[CHECK: OWNER/METHODIST…]` **не публиковать до утверждения владельцем и методистом**; пометки снимаем только после утверждения. Ни одной неутверждённой пометки [OWNER/METHODIST] — условие стоп-ворот недели 2.
+  5. Упражнения в ответах Snapshot — только нагрузки 1 без верха, из списка, утверждённого владельцем и методистом. Если списка нет, упражнения в ответе нет (VF-009).
 - **Snapshot только после цены и контакта** (правка R3). Поэтому на странице Snapshot блок цен стоит над формой, а форма начинается с email.
 - **Потолок Snapshot — ≤5 в неделю на педагога (≤20 мин), отдельный лимит [Д].** Общий потолок педагога ≤40 мин/нед [Д], утверждает владелец; флаги вне лимита. Вместо счётчика — честный лист ожидания с датой (VF-007, VF-009).
 - **Перед записью Snapshot — вопрос о здоровье** («Is your voice hurting or hoarse…»). Ответ «Yes» ведёт к Refer-out без записи (VF-009, VF-065).
@@ -122,7 +122,7 @@ We would rather be slow and safe than fast and sorry.
 - **Private by default.** Your recordings are listened to by you and your coach — nobody else. (One member of our small team handles the files to cut your clips; they don't review your singing.) Nothing is shared or posted unless you choose to, every time.
 - **Your coach hears it first.** You make your first home recording in your first lesson, with your coach, and you listen to it together. Most people find their recorded voice strange at first — that's normal, and we'll explain why.
 - **Home practice stays inside what your coach allowed.** You only practice at home what your coach marked as safe to do on your own. Your plan never goes higher than your lesson. Short sessions — most are 10–15 minutes, and never more than 25 minutes of singing a day. Rest days are part of the plan. [UK: practise]
-- **It stops the moment something hurts.** If your voice hurts, stop singing and tell your coach. You'll hear back the same day, and we'll tell you if it's time to see a doctor or a voice specialist. If it's severe or sudden, or you have trouble breathing, get medical help right away — don't wait for us. [CHECK: SLP-approved wording, VF-065 — не публиковать до одобрения SLP]
+- **It stops the moment something hurts.** If your voice hurts, stop singing and tell your coach. You'll hear back the same day, and we'll tell you if it's time to see a doctor or a voice specialist. If it's severe or sudden, or you have trouble breathing, get medical help right away — don't wait for us. [CHECK: OWNER/METHODIST-approved wording, VF-065 — не публиковать до утверждения владельцем и методистом]
 - **Feeling sick? Press pause.** Missing practice because you're ill is not "falling behind".
 - **A person listens.** A real coach listens to your recording. No AI scores your voice. [CHECK: true only while no LLM step touches student content — plan №15]
 - **Adults only, for now.** Our lessons and recordings are for people aged 18 and over.
@@ -171,7 +171,7 @@ Most people can learn to sing better than they do today. How far and how fast de
 That depends on what you want from singing — and you should be able to find out cheaply. That's why the Voice Snapshot is free and the Starter Month doesn't renew. If you're not happy after your first month, you get a full refund.
 
 **6. Why can't I sing like I used to?**
-Voices change over time, and a long break changes how easy things feel. A coach can help you find where your voice is comfortable now and rebuild from there. If you have pain, hoarseness that doesn't go away, or a sudden change in your voice, please see a doctor (an ENT) or a speech-language pathologist first. [UK: your GP, an ENT or a speech and language therapist] [CHECK: SLP-approved wording — не публиковать до одобрения SLP]
+Voices change over time, and a long break changes how easy things feel. A coach can help you find where your voice is comfortable now and rebuild from there. If you have pain, hoarseness that doesn't go away, or a sudden change in your voice, please see a doctor (an ENT) or a speech-language pathologist first. [UK: your GP, an ENT or a speech and language therapist] [CHECK: OWNER/METHODIST-approved wording — не публиковать до утверждения владельцем и методистом]
 
 **7. How do I practice singing in an apartment?** [UK: How do I practise singing in a flat?]
 Tell us where you can practice when you sign up — a room with a door, only quietly, only in the car, or nowhere right now. Your coach plans your week around it. Please don't "whisper-sing" to stay quiet: it can strain your voice. Humming and other quiet exercises your coach gives you are fine.
@@ -328,18 +328,18 @@ Voice Snapshot — free · Diagnostic lesson — {$29} · Starter Month (4 lesso
 
 **Step 3 — Your recording**
 
-> v1.1 (VF-009, VF-065): сначала вопрос о здоровье (тот же, что в §7, Q24). «Yes» → запись не показываем, показываем Refer-out. Запись делается без педагога и без распевки, поэтому инструкцию к записи одобряет SLP. Тексты с `[CHECK: SLP…]` не публиковать до одобрения SLP.
+> v1.1 (VF-009, VF-065): сначала вопрос о здоровье (тот же, что в §7, Q24). «Yes» → запись не показываем, показываем Refer-out. Запись делается без педагога и без распевки, поэтому инструкцию к записи утверждают владелец и методист. Тексты с `[CHECK: OWNER/METHODIST…]` не публиковать до утверждения владельцем и методистом.
 
 **Before you record: is your voice hurting or hoarse right now, or has it been for a while?** *(required)*
 - ( ) No → continue
-- ( ) Yes → *[recording hidden]* "Thanks for telling us. Please don't record or sing for now — see a doctor first. [UK: your GP] If it's severe or sudden, or you have trouble breathing, get medical help right away." [CHECK: SLP-approved Refer-out text — не публиковать до одобрения SLP]
+- ( ) Yes → *[recording hidden]* "Thanks for telling us. Please don't record or sing for now — see a doctor first. [UK: your GP] If it's severe or sudden, or you have trouble breathing, get medical help right away." [CHECK: OWNER/METHODIST-approved Refer-out text — не публиковать до утверждения владельцем и методистом]
 
 Record up to 60 seconds on your phone. Choose one:
 - ( ) **Sing** a bit of any song you like — no backing track needed.
 - ( ) **Hum only** — hum any tune you know. That's completely fine.
 
 Tips:
-- Sing something comfortable — no high notes, no warm-up needed, stop if anything feels tight. [CHECK: SLP-approved recording instruction — не публиковать до одобрения SLP]
+- Sing something comfortable — no high notes, no warm-up needed, stop if anything feels tight. [CHECK: OWNER/METHODIST-approved recording instruction — не публиковать до утверждения владельцем и методистом]
 - If anything hurts, stop. Don't send a recording that hurt to make.
 - Somewhere quiet-ish is fine. Perfect sound isn't needed.
 
@@ -362,14 +362,14 @@ We don't sell your data. A person listens to your recording; no AI scores your v
 
 ### 4.2 Coach reply template (≤4 minutes total)
 
-> Для педагогов. Внутренний текст, студент его не видит. У Snapshot отдельный лимит: ≤5 в неделю на педагога (≤20 мин), общий потолок ≤40 мин/нед [Д]; оплачивается поштучно (решение владельца, план §9, п. 5–6). Флаги — вне лимита. Хронометраж — в `teacher_seconds` каждый раз.
+> Для педагогов. Внутренний текст, студент его не видит. У Snapshot отдельный лимит: ≤5 в неделю на педагога (≤20 мин), общий потолок ≤40 мин/нед [Д]; работа с Snapshot входит в ставку педагога, поштучной оплаты нет (решение владельца 2026-09-27, план §12); лимит — защита от перегрузки. Флаги — вне лимита. Хронометраж — в `teacher_seconds` каждый раз (учёт нагрузки, не основание для оплаты).
 
 **Time budget (target median ≤4 min)**
 
 | Step | Time |
 |---|---|
 | Listen once, all the way through (twice max) | ≤1.5 min |
-| Pick the one "working" thing + the one "try first" from the SLP-approved list (no list → no "try first") | ≤0.5 min |
+| Pick the one "working" thing + the one "try first" from the owner/methodist-approved list (no list → no "try first") | ≤0.5 min |
 | Record the voice reply (60–90 seconds; one take, don't redo for polish) | ≤1.5 min |
 | Send + log `teacher_seconds` | ≤0.5 min |
 
@@ -380,7 +380,7 @@ If you're over 6 minutes on one Snapshot, stop and send the short version. Tell 
 1. **Hello + thanks (≈5 s).** Use their name. Thank them for sending it — it takes courage.
 2. **One thing that's already working (≈15–20 s).** Specific and true: something you actually heard. Not "great voice!" — say *what*.
 3. **Where your voice sounded comfortable in this take (≈10–15 s).** Describe it in plain words ("the middle of that tune sat really easily"). **No note names, no range, no voice type, no Key Card.**
-4. **One thing to try first (≈20–30 s).** One load-1 exercise with no high notes, from the **SLP-approved list** only [CHECK: SLP-approved list — не использовать до одобрения SLP]. **If there is no approved list yet, skip this step** — no exercise in the reply. Say how long (1–3 minutes), how loud (comfortable), and the stop rule ("if anything feels tight or hurts, stop").
+4. **One thing to try first (≈20–30 s).** One load-1 exercise with no high notes, from the **owner/methodist-approved list** only [CHECK: OWNER/METHODIST-approved list — не использовать до утверждения владельцем и методистом]. **If there is no approved list yet, skip this step** — no exercise in the reply. Say how long (1–3 minutes), how loud (comfortable), and the stop rule ("if anything feels tight or hurts, stop").
 5. **Next step, no pressure (≈10 s).** "If you'd like to keep going, a diagnostic lesson is the next step. The link is in the email. No rush."
 
 **Never say** (VF-001, VF-043, VF-044)
@@ -392,20 +392,20 @@ If you're over 6 minutes on one Snapshot, stop and send the short version. Tell 
 - Anything medical: diagnoses, "it's probably nodules".
 
 **Red-flag rule (VF-030, VF-065)**
-If the student mentions pain, hoarseness that won't go away, or losing their voice — or you hear something that worries you — **don't give an exercise**. Send the Refer-out Card text instead [CHECK: SLP-approved — не использовать до одобрения SLP]: say "See a doctor first" and **don't include the diagnostic-lesson link** (skip step 5). Tell the on-duty flag person the same day, and log it. This is outside your Snapshot time budget; never cut it short.
+If the student mentions pain, hoarseness that won't go away, or losing their voice — or you hear something that worries you — **don't give an exercise**. Send the Refer-out Card text instead [CHECK: OWNER/METHODIST-approved — не использовать до утверждения владельцем и методистом]: say "See a doctor first" and **don't include the diagnostic-lesson link** (skip step 5). Tell the on-duty flag person the same day, and log it. This is outside your Snapshot time budget; never cut it short.
 
 **Three example replies**
 
 *Example 1 — beginner, "I was told I can't sing"* (they sang a verse of a pop song)
-> "Hi Maria, thank you for sending this — I know that's a big step. Something that's already working: you kept a steady rhythm the whole way through, and your words were really clear. In this take, your voice sounded most comfortable in the lower, speaking part of the verse — it felt relaxed there. One thing to try first: {SLP-approved load-1 exercise, only if the list exists; otherwise skip this sentence — e.g. a gentle hum on one easy note, then sliding up and down a little, like a siren, only where it feels easy — about two minutes, quiet volume}. If anything feels tight, just stop. If you'd like to keep going, a diagnostic lesson is the next step — the link's in the email. No rush at all."
+> "Hi Maria, thank you for sending this — I know that's a big step. Something that's already working: you kept a steady rhythm the whole way through, and your words were really clear. In this take, your voice sounded most comfortable in the lower, speaking part of the verse — it felt relaxed there. One thing to try first: {owner/methodist-approved load-1 exercise, only if the list exists; otherwise skip this sentence — e.g. a gentle hum on one easy note, then sliding up and down a little, like a siren, only where it feels easy — about two minutes, quiet volume}. If anything feels tight, just stop. If you'd like to keep going, a diagnostic lesson is the next step — the link's in the email. No rush at all."
 
 *Example 2 — returning adult, "I can't sing like I used to"* (they sang a chorus they used to sing)
-> "Hi James, thanks for this. Something that's already working: you clearly still know how to shape a phrase — the way you ended each line was lovely. In this take, your voice sounded easiest in the middle of the chorus; the very top felt like more effort, which is really common after a break. One thing to try first: {SLP-approved load-1 exercise, only if the list exists; otherwise skip this sentence — e.g. lip bubbles on an easy slide, two minutes, gentle}. And please don't push for the old high notes yet — if you'd like, that's something to work on step by step in lessons. If you'd like, a diagnostic lesson is the next step. The link's in the email."
+> "Hi James, thanks for this. Something that's already working: you clearly still know how to shape a phrase — the way you ended each line was lovely. In this take, your voice sounded easiest in the middle of the chorus; the very top felt like more effort, which is really common after a break. One thing to try first: {owner/methodist-approved load-1 exercise, only if the list exists; otherwise skip this sentence — e.g. lip bubbles on an easy slide, two minutes, gentle}. And please don't push for the old high notes yet — if you'd like, that's something to work on step by step in lessons. If you'd like, a diagnostic lesson is the next step. The link's in the email."
 
 *Example 3 — very nervous, "Hum only"*
-> "Hi Sam, thank you — humming counts, and it told me a lot. Something that's already working: your hum was steady and you stayed with the tune all the way to the end. It sounded most comfortable around the middle of the melody, nice and relaxed. One thing to try first: {SLP-approved load-1 exercise, only if the list exists; otherwise skip this sentence — e.g. hum the same tune again, even softer, and notice where it feels easiest — about one minute}. That's it. No one else hears these. If you'd like to go further, a diagnostic lesson is the next step — whenever you're ready."
+> "Hi Sam, thank you — humming counts, and it told me a lot. Something that's already working: your hum was steady and you stayed with the tune all the way to the end. It sounded most comfortable around the middle of the melody, nice and relaxed. One thing to try first: {owner/methodist-approved load-1 exercise, only if the list exists; otherwise skip this sentence — e.g. hum the same tune again, even softer, and notice where it feels easiest — about one minute}. That's it. No one else hears these. If you'd like to go further, a diagnostic lesson is the next step — whenever you're ready."
 
-> Все упражнения в фигурных скобках — заглушки. В реальный ответ идёт только упражнение нагрузки 1 без верха из списка, одобренного SLP (VF-009, v1.1). Если списка нет, шаг 4 пропускаем и упражнения в ответе нет. Пример 2 не должен вести к верху: только лёгкое упражнение в удобной зоне.
+> Все упражнения в фигурных скобках — заглушки. В реальный ответ идёт только упражнение нагрузки 1 без верха из списка, утверждённого владельцем и методистом (VF-009, v1.1). Если списка нет, шаг 4 пропускаем и упражнения в ответе нет. Пример 2 не должен вести к верху: только лёгкое упражнение в удобной зоне.
 
 ---
 
@@ -556,7 +556,7 @@ If the student mentions pain, hoarseness that won't go away, or losing their voi
 - ( ) Hoarse, sore or it hurts
 - ( ) I'm sick
 
-*If you choose "Hoarse, sore or it hurts":* Please don't sing until you hear from your coach — they'll get back to you today. If it's severe or sudden, or you have trouble breathing, get medical help right away. [CHECK: SLP-approved wording — не публиковать до одобрения SLP]
+*If you choose "Hoarse, sore or it hurts":* Please don't sing until you hear from your coach — they'll get back to you today. If it's severe or sudden, or you have trouble breathing, get medical help right away. [CHECK: OWNER/METHODIST-approved wording — не публиковать до утверждения владельцем и методистом]
 *If you choose "I'm sick":* Rest first. Want to move your lesson? [ Move my lesson ] — no charge, no problem.
 
 **2. On how many days did you get to practice this week?** [UK: practise]
@@ -621,7 +621,7 @@ If the student mentions pain, hoarseness that won't go away, or losing their voi
     - ( ) I sing now and then, on my own
     - ( ) I sing regularly (choir, band, church, shows)
 
-    > v1.1 (VF-047): возвращающимся (Q11 «I sang as a kid or teen and stopped» или Q7 «Get back to singing after a break») и студентам 40+ показывать текст ниже. Поля возраста 40+ в форме нет — как определять 40+, решает владелец. [CHECK: SLP-approved wording — не публиковать до одобрения SLP]
+    > v1.1 (VF-047): возвращающимся (Q11 «I sang as a kid or teen and stopped» или Q7 «Get back to singing after a break») и студентам 40+ показывать текст ниже. Поля возраста 40+ в форме нет — как определять 40+, решает владелец. [CHECK: OWNER/METHODIST-approved wording — не публиковать до утверждения владельцем и методистом]
 
     *Voices change over time, and a long break changes how easy things feel. A coach can help you find where your voice is comfortable now and rebuild from there. If you have pain, hoarseness that doesn't go away, or a sudden change in your voice, please see a doctor (an ENT) or a speech-language pathologist first.* [UK: your GP, an ENT or a speech and language therapist]
 12. **Have you had singing lessons before?** ( ) No ( ) Yes, a few ( ) Yes, for a while
@@ -681,7 +681,7 @@ Your recordings are **private by default**: only you and your coach hear them. Y
 
 24. **Is your voice hurting or hoarse right now, or has it been for a while?**
     - ( ) No
-    - ( ) Yes → "Thanks for telling us. Please don't sing until your coach contacts you — they'll reply the same day. If it's severe or sudden, or you have trouble breathing, get medical help right away. Please don't write medical details here." [flag → same-day coach reply; CHECK: SLP-approved Refer-out text — не публиковать до одобрения SLP]
+    - ( ) Yes → "Thanks for telling us. Please don't sing until your coach contacts you — they'll reply the same day. If it's severe or sudden, or you have trouble breathing, get medical help right away. Please don't write medical details here." [flag → same-day coach reply; CHECK: OWNER/METHODIST-approved Refer-out text — не публиковать до утверждения владельцем и методистом]
 
 **Last thing**
 
@@ -725,9 +725,9 @@ Your recordings are **private by default**: only you and your coach hear them. Y
 - [ ] "A person listens / No AI scores your voice" is still true (№15). "Never used to train AI" removed unless verified.
 - [ ] Age question comes before any recording on every form (VF-063).
 - [ ] Consent boxes are separate and not pre-ticked (VF-064).
-- [ ] Safety and Refer-out wording signed off by SLP (VF-065).
+- [ ] Safety and Refer-out wording signed off by the owner and the head of method (VF-065).
 - [ ] No "best take" anywhere — only "your take" / "one home take" (VF-011).
 - [ ] Snapshot reply and page: no note names and no range (VF-009).
-- [ ] No unapproved [SLP] / [CHECK: SLP…] marks left in anything published (VF-065).
+- [ ] No unapproved [OWNER/METHODIST] / [CHECK: OWNER/METHODIST…] marks left in anything published (VF-065).
 - [ ] Before/Now: no cross-lesson pairs promised before lesson 3.
 - [ ] HOME is not in the hero.
